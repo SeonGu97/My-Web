@@ -11,6 +11,7 @@
 // var
 $primary-white: #fafafa;
 $primary-black: #212121;
+$primary-size: 1rem;
 
 // style
 html {
@@ -26,6 +27,7 @@ html {
             justify-content: center;
 
             .container {
+                display: flex;
                 max-width: 1200px;
                 @include full-size();
 
@@ -34,12 +36,17 @@ html {
                     height: 100%;
 
                     header {
-
+                        width: 100%;
                     }
     
                     nav {
-    
+                        width: 100%;
                     }
+                }
+
+                aside {
+                    width: 20%;
+                    height: 100%;
                 }
             }
         }
