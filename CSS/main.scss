@@ -1,0 +1,20 @@
+@import 'reset';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
+@mixin full-size {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    @include full-size();
+
+    body {
+        @include full-size();
+        font-family: 'Noto Sans KR', sans-serif;
+
+        #index {
+            @include full-size();
+        }
+    }
+}
