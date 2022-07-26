@@ -80,11 +80,20 @@ html body #index .container main {
 }
 html body #index .container main header {
   width: 100%;
+  height: 3.5rem;
 }
 html body #index .container main nav {
   width: 100%;
+  height: 3.5rem;
 }
 html body #index .container aside {
   width: 20%;
   height: 100%;
+  box-shadow: -3px -3px 3px 0px #eceff1;
+}
+html body .bd-b {
+  border-bottom: 1px solid rgb(218, 220, 224);
+}
+html body .bd-l {
+  border-left: 1px solid rgb(218, 220, 224);
 }/*# sourceMappingURL=main.css.map */

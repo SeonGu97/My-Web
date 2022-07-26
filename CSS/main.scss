@@ -12,6 +12,7 @@
 $primary-white: #fafafa;
 $primary-black: #212121;
 $primary-size: 1rem;
+$gray-1: rgb(218, 220, 224);
 
 // style
 html {
@@ -37,18 +38,29 @@ html {
 
                     header {
                         width: 100%;
+                        height: $primary-size * 3.5;
                     }
     
                     nav {
                         width: 100%;
+                        height: $primary-size * 3.5;
                     }
                 }
 
                 aside {
                     width: 20%;
                     height: 100%;
+                    box-shadow: -3px -3px 3px 0px #eceff1;
                 }
             }
+        }
+
+        .bd-b {
+            border-bottom: 1px solid $gray-1;
+        }
+
+        .bd-l {
+            border-left: 1px solid $gray-1;
         }
     }
 }
