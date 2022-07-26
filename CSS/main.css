@@ -72,4 +72,8 @@ html body #index .container {
   max-width: 1200px;
   width: 100%;
   height: 100%;
+}
+html body #index .container main {
+  width: 80%;
+  height: 100%;
 }/*# sourceMappingURL=main.css.map */
