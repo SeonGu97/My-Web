@@ -14,7 +14,14 @@ html {
         font-family: 'Noto Sans KR', sans-serif;
 
         #index {
+            display: flex;
             @include full-size();
+            justify-content: center;
+
+            .container {
+                max-width: 1200px;
+                @include full-size();
+            }
         }
     }
 }

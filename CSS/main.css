@@ -63,6 +63,13 @@ html body {
   font-family: "Noto Sans KR", sans-serif;
 }
 html body #index {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+html body #index .container {
+  max-width: 1200px;
   width: 100%;
   height: 100%;
 }/*# sourceMappingURL=main.css.map */
