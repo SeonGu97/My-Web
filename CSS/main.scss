@@ -14,6 +14,7 @@ $primary-black: #212121;
 $primary-size: 1rem;
 $gray-1: rgb(218, 220, 224);
 $gray-2: rgb(95, 99, 104);
+$blue-1: rgb(26, 115, 232); 
 
 // style
 html {
@@ -22,6 +23,13 @@ html {
     body {
         @include full-size();
         font-family: 'Noto Sans KR', sans-serif;
+        color: $gray-2;
+
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none;
+
 
         #index {
             display: flex;
@@ -58,13 +66,57 @@ html {
                                 justify-content: center;
                                 font-size: $primary-size * 1.25;
                                 font-weight: bold;
-                                color: $gray-2;
                             }
                         }
 
                         nav {
+                            display: flex;
                             width: 60%;
                             height: 100%;
+                            box-sizing: border-box;
+
+                            .menu {
+                                display: flex;
+                                width: 25%;
+                                height: 100%;
+                                justify-content: center;
+                                align-items: center;
+                                font-weight: bold;
+                                cursor: pointer;
+                                position: relative;
+                                --a: initial;
+                                overflow: hidden;
+
+                                &:after {
+                                    content: '';
+                                    width: var(--diameter);
+                                    height: var(--diameter);
+                                    position: absolute;
+                                    top: var(--top);
+                                    left: var(--left);
+                                    transform: scale(0);
+                                    background: red;
+                                    border-radius: 50%;
+                                    pointer-events: none;
+                                    animation: var(--a);
+                                }
+
+                                &:hover {
+                                    background: #f5f5f5;
+                                }
+
+                                @keyframes effect {
+                                    100% {
+                                        transform: scale(1);
+                                        opacity: 0;
+                                    }
+                                }
+                            }
+
+                            .active {
+                                color: $blue-1;
+                                border-bottom: 2px solid $blue-1;
+                            }
                         }
                     }
                 }

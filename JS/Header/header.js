@@ -1,6 +1,6 @@
 'use strict';
 
-import Logo from "../Nav/logo.js";
+import Logo from "../Header/logo.js";
 import Nav from "../Nav/nav.js";
 
 export default class Header {
