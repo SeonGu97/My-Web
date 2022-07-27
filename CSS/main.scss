@@ -13,6 +13,7 @@ $primary-white: #fafafa;
 $primary-black: #212121;
 $primary-size: 1rem;
 $gray-1: rgb(218, 220, 224);
+$gray-2: rgb(95, 99, 104);
 
 // style
 html {
@@ -37,13 +38,34 @@ html {
                     height: 100%;
 
                     header {
+                        display: flex;
                         width: 100%;
                         height: $primary-size * 3.5;
-                    }
-    
-                    nav {
-                        width: 100%;
-                        height: $primary-size * 3.5;
+                        justify-content: space-between;
+
+                        .logo {
+                            display: flex;
+                            width: 15%;
+                            height: 100%;
+                            text-align: center;
+                            align-items: center;
+
+                            &::after {
+                                content: 'My Web';
+                                display: flex;
+                                @include full-size();
+                                align-items: center;
+                                justify-content: center;
+                                font-size: $primary-size * 1.25;
+                                font-weight: bold;
+                                color: $gray-2;
+                            }
+                        }
+
+                        nav {
+                            width: 60%;
+                            height: 100%;
+                        }
                     }
                 }
 
