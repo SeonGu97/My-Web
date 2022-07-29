@@ -120,51 +120,56 @@ html body #index .container main header nav .menu {
   align-items: center;
   cursor: pointer;
   position: relative;
+  overflow: hidden;
+  background: var(--bg);
 }
 html body #index .container main header nav .menu:hover {
   background: #f5f5f5;
 }
-html body #index .container main header nav .menu .wave {
-  width: 17.5rem;
-  height: 17.5rem;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
+html body #index .container main header nav .menu .effect {
+  width: 20rem;
+  height: 20rem;
   position: absolute;
   top: var(--top);
   left: var(--left);
+  background: rgba(26, 115, 232, 0.15);
+  border-radius: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0;
   pointer-events: none;
-  transition: none;
-  -webkit-animation: effect 1s ease;
-          animation: effect 1s ease;
+  -webkit-animation: effect 500ms ease;
+          animation: effect 500ms ease;
 }
 @-webkit-keyframes effect {
   0% {
     opacity: 0;
-    transform: scale(0);
+    transform: translate(-50%, -50%) scale(0);
   }
   30% {
     opacity: 1;
   }
   100% {
-    transform: scale(1);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 @keyframes effect {
   0% {
     opacity: 0;
-    transform: scale(0);
+    transform: translate(-50%, -50%) scale(0);
   }
   30% {
     opacity: 1;
   }
   100% {
-    transform: scale(1);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 html body #index .container main header nav .active {
   color: rgb(26, 115, 232);
   border-bottom: 2px solid rgb(26, 115, 232);
+  background: rgba(26, 115, 232, 0.15);
 }
 html body #index .container aside {
   width: 20%;

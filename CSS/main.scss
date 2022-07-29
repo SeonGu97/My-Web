@@ -15,6 +15,7 @@ $primary-size: 1rem;
 $gray-1: rgb(218, 220, 224);
 $gray-2: rgb(95, 99, 104);
 $blue-1: rgb(26, 115, 232); 
+$blue-2: rgba(26, 115, 232, .15);
 
 // style
 html {
@@ -83,29 +84,31 @@ html {
                                 align-items: center;
                                 cursor: pointer;
                                 position: relative;
+                                overflow: hidden;
+                                background: var(--bg);
 
                                 &:hover {
                                     background: #f5f5f5;
                                 }
 
-                                .wave {
-                                    width: 17.5rem;
-                                    height: 17.5rem;
-                                    background: rgba(0, 0, 0, 0.5);
-                                    border-radius: 50%;
+                                .effect {
+                                    width: 20rem;
+                                    height: 20rem;
                                     position: absolute;
                                     top: var(--top);
                                     left: var(--left);
+                                    background: $blue-2;
+                                    border-radius: 50%;
                                     transform: translate(-50%, -50%);
+                                    opacity: 0;
                                     pointer-events: none;
-                                    transition: none;
-                                    animation: effect 1s ease;
+                                    animation: effect 500ms ease;
                                 }
 
                                 @keyframes effect {
                                     0% {
                                         opacity: 0;
-                                        transform: scale(0);
+                                        transform: translate(-50%, -50%) scale(0);
                                     }
 
                                     30% {
@@ -113,7 +116,8 @@ html {
                                     }
 
                                     100% {
-                                        transform: scale(1);
+                                        opacity: 0;
+                                        transform: translate(-50%, -50%) scale(1);
                                     }
                                 }
                             }
@@ -121,6 +125,7 @@ html {
                             .active {
                                 color: $blue-1;
                                 border-bottom: 2px solid $blue-1;
+                                background: $blue-2;
                             }
                         }
                     }

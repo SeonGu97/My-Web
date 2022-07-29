@@ -10,6 +10,16 @@ export default class Menu {
 
             this.target = e.target;
             this.target.classList.add('active');
+
+            this.effect = new Create('effect', 'span', ['class'], ['effect'], '', 1, this.target, true, 'animationend', e => {
+                e.target.remove();
+            });
+        
+            const {clientX, clientY} = e;
+            const {top, left} = this.target.getBoundingClientRect();
+
+            this.effect.name.style.setProperty('--top', `${clientY - top}px`);
+            this.effect.name.style.setProperty('--left', `${clientX - left}px`);
         });
         
         this.menus = document.querySelectorAll('.menu');
