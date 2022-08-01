@@ -1,0 +1,21 @@
+$pc: 1000px;
+$tablet: 768px;
+$mobile: 480px;
+
+@mixin pc {
+    @media all and (max-width: $pc) {
+        @content;
+    }
+}
+
+@mixin table {
+    @media all and (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media all and (max-width: $mobile) {
+        @content;
+    }
+}

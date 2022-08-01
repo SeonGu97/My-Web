@@ -9,5 +9,10 @@ export default class Container {
         
         this.main = new Main(Create, this.container.name);
         this.aside = new Aside(Create, this.container.name);
+
+        this.nav = document.querySelectorAll('nav');
+        this.nav.forEach(element => {
+            element.firstChild.classList.add('active');
+        })
     }
 }
