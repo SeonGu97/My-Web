@@ -2,6 +2,8 @@
 
 import Create from "./JS/Create/creator.js";
 import Container from "./JS/Container/container.js";
+import Close from "./JS/Aside/close.js";
+import Resize from "./JS/Resize/resize.js"
 
 export default class Index {
     constructor() {
@@ -10,6 +12,8 @@ export default class Index {
         });
     
         this.container = new Container(Create, this.index.name);
+        this.close = new Close(Create, this.index.name);
+        Resize;
     }
 }
 
