@@ -6,6 +6,12 @@ export default class Bar {
             this.aside = document.querySelector('aside');
 
             this.aside.classList.toggle('show');
+            
+            if(this.aside.classList[1] == 'show') {
+                this.close = document.querySelector('.close');
+
+                this.close.classList.add('open');
+            }
         });
     }
 }

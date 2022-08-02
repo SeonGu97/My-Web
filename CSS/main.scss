@@ -153,10 +153,10 @@ html {
                     width: 300px;
                     height: 100%;
                     flex-direction: column;
-                    box-shadow: 2px 0px 5px 0px #eceff1;
                     background: #fff;
                     row-gap: $primary-size;
                     transition: transform .2s ease;
+                    z-index: 10;
 
                     .logo {
                         width: 100%;
@@ -201,6 +201,17 @@ html {
         }
     }
     
+    .close {
+        display: none;
+        @include full-size();
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+    }
+
+    .open {
+        display: flex;
+        z-index: 5;
+    }
 }
 
 @include pc {
