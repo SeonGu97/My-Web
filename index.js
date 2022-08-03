@@ -4,6 +4,7 @@ import Create from "./JS/Create/creator.js";
 import Container from "./JS/Container/container.js";
 import Close from "./JS/Aside/close.js";
 import Resize from "./JS/Resize/resize.js"
+import Dark_mod from "./JS/Mod/dark-mod.js";
 
 export default class Index {
     constructor() {
@@ -14,6 +15,7 @@ export default class Index {
         this.container = new Container(Create, this.index.name);
         this.close = new Close(Create, this.index.name);
         Resize;
+        this.dark_mod = new Dark_mod(Create, this.index.name);
     }
 }
 

@@ -231,6 +231,10 @@ html body .bd-l {
 html body .bd-r {
   border-right: 1px solid rgb(218, 220, 224);
 }
+html body .dark {
+  background: #1e1f21;
+  color: #fafafa;
+}
 html .close {
   display: none;
   width: 100%;
@@ -241,6 +245,26 @@ html .close {
 html .open {
   display: flex;
   z-index: 5;
+}
+html .dark-mod {
+  display: flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: none;
+}
+html .dark-mod i {
+  pointer-events: auto;
+}
+html .dark-mod i:hover {
+  color: #ffd600;
 }
 
 @media all and (max-width: 1000px) {
