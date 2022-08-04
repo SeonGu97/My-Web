@@ -7,7 +7,7 @@ export default class Bar {
 
             this.aside.classList.toggle('show');
             
-            if(this.aside.classList[1] == 'show') {
+            if(this.aside.classList.contains('show')) {
                 this.close = document.querySelector('.close');
 
                 this.close.classList.add('open');

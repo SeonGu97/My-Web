@@ -118,7 +118,6 @@ html body #index .container main header nav {
   display: flex;
   width: 600px;
   height: 100%;
-  box-sizing: border-box;
 }
 html body #index .container main header nav .menu {
   width: 25%;
@@ -132,9 +131,8 @@ html body #index .container main header nav .menu {
   background: var(--bg);
   box-sizing: border-box;
   font-weight: bold;
-}
-html body #index .container main header nav .menu:hover {
-  background: #f5f5f5;
+  --blue-1: rgba(26, 115, 232, .15);
+  --blue-2: red;
 }
 html body #index .container main header nav .menu .effect {
   width: 20rem;
@@ -142,7 +140,7 @@ html body #index .container main header nav .menu .effect {
   position: absolute;
   top: var(--top);
   left: var(--left);
-  background: rgba(26, 115, 232, 0.15);
+  background: var(--blue-1);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
@@ -175,6 +173,12 @@ html body #index .container main header nav .menu .effect {
     opacity: 0;
     transform: translate(-50%, -50%) scale(1);
   }
+}
+html body #index .container main header nav .hover {
+  background: #f5f5f5;
+}
+html body #index .container main header nav .hover-dark {
+  background: #373737;
 }
 html body #index .container aside {
   display: none;
@@ -220,7 +224,10 @@ html body #index .container aside nav .menu {
 html body .active {
   color: rgb(26, 115, 232);
   border-bottom: 2px solid rgb(26, 115, 232);
-  background: rgba(26, 115, 232, 0.15);
+}
+html body .active-dark {
+  color: #8ab4f8;
+  border-bottom: 2px solid #8ab4f8;
 }
 html body .bd-b {
   border-bottom: 1px solid rgb(218, 220, 224);
@@ -231,9 +238,15 @@ html body .bd-l {
 html body .bd-r {
   border-right: 1px solid rgb(218, 220, 224);
 }
-html body .dark {
-  background: #1e1f21;
-  color: #fafafa;
+html body .dark-1 {
+  background: #1e1f21 !important;
+  color: #fafafa !important;
+}
+html body .dark-2 {
+  background: rgb(41, 42, 45) !important;
+}
+html body .dark-bd {
+  border-color: #424242 !important;
 }
 html .close {
   display: none;
@@ -264,6 +277,9 @@ html .dark-mod i {
   pointer-events: auto;
 }
 html .dark-mod i:hover {
+  color: #ffd600;
+}
+html .mod-change {
   color: #ffd600;
 }
 

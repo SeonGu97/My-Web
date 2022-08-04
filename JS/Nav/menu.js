@@ -9,6 +9,7 @@ export default class Menu {
 
             for(let i = 0; i < this.menus.length; i++) {
                 this.menus[i].classList.remove('active');
+                this.menus[i].classList.remove('active-dark');
                 this.menus[i].index = i;
             }
 
@@ -16,8 +17,14 @@ export default class Menu {
                 this.target.index -= this.nav[0].childNodes.length;
             }
 
+            this.dark_mod = document.querySelector('.dark-mod');
+
             this.nav.forEach(element => {
-                element.childNodes[this.target.index].classList.add('active');
+                if(this.dark_mod.classList.contains('mod-change')) {
+                    element.childNodes[this.target.index].classList.add('active-dark');
+                }else {
+                    element.childNodes[this.target.index].classList.add('active');
+                }
             })
 
             this.effect = new Create('effect', 'span', ['class'], ['effect'], '', 1, this.target, true, 'animationend', e => {
