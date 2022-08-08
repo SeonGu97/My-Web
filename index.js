@@ -17,7 +17,6 @@ export default class Index {
         
         this.name = 'mod';
         this.value = JSON.parse(localStorage.getItem(this.name));
-        console.log(this.value)
 
         this.header = document.querySelector('header');
         this.main = document.querySelector('main');

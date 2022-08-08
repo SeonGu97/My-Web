@@ -156,6 +156,12 @@ html {
                             }
                         }
                     }
+
+                    .content {
+                        width: 100%;
+                        height: calc(100% - $primary-size * 3.6);
+                        box-sizing: border-box;
+                    }
                 }
 
                 aside {
