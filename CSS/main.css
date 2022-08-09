@@ -182,8 +182,19 @@ html body #index .container main header nav .hover-dark {
 }
 html body #index .container main .content {
   width: 100%;
-  height: calc(100% - 3.6rem);
+  height: calc(100% - 3.55rem);
   box-sizing: border-box;
+  padding: 1rem;
+}
+html body #index .container main .content .area_1 {
+  display: flex;
+  width: 100%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+html body #index .container main .content .area_1 img {
+  transform: scale(0.5);
 }
 html body #index .container aside {
   display: none;
