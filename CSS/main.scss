@@ -1,47 +1,46 @@
-// import
-@import 'var';
 @import 'reset';
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 
-// mixin
 @mixin full-size {
     width: 100%;
     height: 100%;
 }
 
-// var
-$primary-white: #fafafa;
-$primary-black: #212121;
 $primary-size: 1rem;
-$gray-1: rgb(218, 220, 224);
-$gray-2: rgb(95, 99, 104);
-$gray-3: #f5f5f5;
-$gray-4: #373737;
-$blue-1: rgb(26, 115, 232); 
-$blue-3: rgba(26, 115, 232, .1);
-$blue-4: #8ab4f8;
-$yellow-1: #ffd600;
-$shadow: .3rem .3rem .6rem var($gray-2), 
--.2rem -.2rem .5rem var($primary-white);
-$inner-shadow: inset .2rem .2rem .5rem var($gray-2), 
-inset -.2rem -.2rem .5rem var($primary-white);
 
-// style
+$primary-white: #fff;
+$primary-black: #5f6368;
+
+$gray-1: #eee;
+$gray-2: #e0e0e0;
+$gary-3: #cfd8dc;
+
+$white-1: #fafafa;
+
+$black-1: #616161;
+$black-2: #424242;
+$black-3: #212121;
+$black-4: #1b1b1b;
+
+$moon: #ffd600;
+
+$sun: #ff6d00;
+
 html {
     @include full-size();
 
     body {
         @include full-size();
+        background: $primary-white;
+        color: $primary-black;
         font-family: 'Noto Sans KR', sans-serif;
-        color: $gray-2;
 
+        // 드래그 방지.
         -webkit-user-select:none;
         -moz-user-select:none;
         -ms-user-select:none;
         user-select:none;
-
-        white-space:nowrap;
-
 
         #index {
             display: flex;
@@ -49,315 +48,128 @@ html {
             justify-content: center;
             position: relative;
 
-            @mixin menu {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                cursor: pointer;
-                position: relative;
-                overflow: hidden;
-                background: var(--bg);
-                box-sizing: border-box;
-                font-weight: bold;
-            }
-
-            @mixin logo {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: $primary-size * 1.25;
-                font-weight: bold;
-            }
-
-            .container {
-                display: flex;
+            main {
                 max-width: 1000px;
                 @include full-size();
-                justify-content: center;
+                border-width: 0px 1px 0px 1px;
+                border-style: solid;
 
-                main {
-                    width: 1000px;
-                    height: 100%;
-
-                    header {
-                        display: flex;
-                        width: 100%;
-                        height: $primary-size * 3.5;
-                        justify-content: space-between;
-
-                        .logo {
-                            width: 150px;
-                            height: 100%;
-                            @include logo();
-                        }
-
-                        
-                        .bar {
-                            display: none;
-                            width: $primary-size * 3.5;
-                            height: $primary-size * 3.5;
-                            justify-content: center;
-                            align-items: center;
-                            font-size: $primary-size * 2;
-                            pointer-events: none;
-
-                            i {
-                                cursor: pointer;
-                                pointer-events: auto;
-                            }
-                        }
-
-                        nav {
-                            display: flex;
-                            width: 600px;
-                            height: 100%;
-
-                            .menu {
-                                width: 25%;
-                                height: 100%;
-                                @include menu();
-
-                                --blue-1: rgba(26, 115, 232, .15);
-                                --blue-2: red; 
-
-                                .effect {
-                                    width: 20rem;
-                                    height: 20rem;
-                                    position: absolute;
-                                    top: var(--top);
-                                    left: var(--left);
-                                    background: var(--blue-1);
-                                    border-radius: 50%;
-                                    transform: translate(-50%, -50%);
-                                    opacity: 0;
-                                    pointer-events: none;
-                                    animation: effect 500ms ease;
-                                }
-
-                                @keyframes effect {
-                                    0% {
-                                        opacity: 0;
-                                        transform: translate(-50%, -50%) scale(0);
-                                    }
-
-                                    30% {
-                                        opacity: 1;
-                                    }
-
-                                    100% {
-                                        opacity: 0;
-                                        transform: translate(-50%, -50%) scale(1);
-                                    }
-                                }
-                            }
-
-                            .hover {
-                                background: $gray-3;
-                            }
-
-                            .hover-dark {
-                                background: $gray-4;
-                            }
-                        }
-                    }
-
-                    .content {
-                        width: 100%;
-                        height: calc(100% - $primary-size * 3.55);
-                        box-sizing: border-box;
-                        position: relative;
-
-                        .area_1 {
-                            display: flex;
-                            width: 100%;
-                            justify-content: center;
-                            position: relative;
-
-                            img {
-                                border-radius: 50%;
-                                transform: scale(.55);
-                                opacity: .9;
-                                border: $primary-size/2 solid #fff;
-                                box-shadow: 0px 0px 2px 6px #eee;
-                            }
-                        }
-
-                        @mixin area {
-                            width: 100%;
-                            height: 50%;
-                            position: absolute;
-                            z-index: -1;
-                        }
-
-                        .area_1_1 {
-                            @include area();
-                            top: 0;
-                            background: #e1f5fe;
-                            border-bottom: 1px solid $gray-1;
-
-                            &::after {
-                                content: '" 빨리가는 유일한 방법은 제대로 가는 것이다 "';
-                                position: absolute;
-                                bottom: $primary-size / 2;
-                                right: $primary-size / 2;
-                                color: #757575;
-                            }
-                        }
-
-                        .area_1_2 {
-                            @include area();
-                            bottom: 0;
-
-                            &::after {
-                                content: '- Robert.C Martin -';
-                                position: absolute;
-                                top: $primary-size / 2;
-                                right: $primary-size;
-                                color: #bdbdbd;
-                                font-size: 0.75rem;
-                            }
-                        }
-                    }
-                }
-
-                aside {
-                    display: none;
-                    width: 300px;
-                    height: 100%;
-                    flex-direction: column;
-                    background: #fff;
-                    row-gap: $primary-size;
-                    transition: transform .2s ease;
-                    z-index: 10;
+                header {
+                    display: flex;
+                    width: inherit;
+                    height: calc(($primary-size * 4) - 1px);
+                    justify-content: space-between;
 
                     .logo {
-                        width: 100%;
-                        height: $primary-size * 3.75;
-                        @include logo();
-                        border-bottom: 1px solid $gray-1;
+                        display: flex;
+                        width: 12rem;
+                        height: 100%;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        column-gap: .75rem;
+
+                        i {
+                            font-size: 2rem;
+                        }
                     }
 
                     nav {
-                        @include full-size();
-                        flex-direction: column;
-                        box-sizing: border-box;
+                        display: flex;
 
                         .menu {
-                            width: 100%;
-                            height: $primary-size * 3;
-                            @include menu();
-                            justify-content: flex-start;
-                            padding: 0 $primary-size * 1.5;
+                            display: flex;
+                            width: 5.5rem;
+                            height: 100%;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 0 $primary-size;
+                            cursor: pointer;
                         }
                     }
                 }
+
+                .light-w-bg-header {
+                    background: $primary-white;
+                }
+
+                .light-d-bg-header {
+                    background: $black-3;
+                }
             }
-        }
 
-        .active {
-            color: $blue-1;
-            border-bottom: 2px solid $blue-1;
-        }
+            .line {
+                margin: 0;
+                border: none;
+                border-bottom: 1px solid;
+            }
 
-        .active-dark {
-            color: $blue-4;
-            border-bottom: 2px solid $blue-4;
-        }
-
-        .bd-b {
-            border-bottom: 1px solid $gray-1;
-        }
-
-        .bd-l {
-            border-left: 1px solid $gray-1;
-        }
-
-        .bd-r {
-            border-right: 1px solid $gray-1;
-        }
-
-        .dark-1 {
-            background: #1e1f21 !important;
-            color: $primary-white !important;
-        }
-
-        .dark-2 {
-            background: rgb(41, 42, 45) !important;
-        }
-
-        .dark-bd {
-            border-color: #424242 !important;
-        }
-    }
+            .bd-w {
+                border-color: $gary-3;
+            }
     
-    .close {
-        display: none;
-        @include full-size();
-        background: rgba(0, 0, 0, 0.5);
-        position: absolute;
-    }
+            .bd-d {
+                border-color: $black-2;
+            }
 
-    .open {
-        display: flex;
-        z-index: 5;
-    }
+            .light-w-bg-main {
+                background: $white-1;
+            }
 
-    .dark-mod {
-        display: flex;
-        width: $primary-size * 2.5;
-        height: $primary-size * 2.5;
-        justify-content: center;
-        align-items: center;
-        font-size: 2rem;
-        position: fixed;
-        right: $primary-size * 2;
-        bottom: $primary-size * 2;
-        border-radius: 50%;
-        cursor: pointer;
-        pointer-events: none;
-
-        i {
-            pointer-events: auto;
-            
-            &:hover {
-                color: $yellow-1;
+            .light-d-bg-main {
+                background: $black-4;
             }
         }
-    }
 
-    .mod-change {
-        color: $yellow-1;
-    }
-}
+        .mod {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: $primary-size * 1.5;
+            bottom: $primary-size * 1.5;
+            padding: $primary-size * 1;
+            border-radius: $primary-size * 2;
+            font-size: $primary-size - .25;
+            font-weight: bold;
+            cursor: pointer;
+            box-sizing: border-box;
+            column-gap: $primary-size / 2;
 
-@include pc {
-    header {
-        nav {
-            display: none !important;
+            i {
+                pointer-events: none;
+                font-size: $primary-size - .1;
+            }
+        }
+
+        .mod-bg-w-w {
+            background: lightgray;
+        }
+
+        .mod-bg-w-d {
+            background: $black-2;
+            color: $primary-white;
+
+            i {
+                color: $moon;
+            }
+        }
+
+        .mod-bg-d-d {
+            background: $black-2;
+        }
+
+        .mod-bg-d-w {
+            background: $black-1;
+
+            i {
+                color: $sun;
+            }
+        }
+
+        .d-mod {
+            background: $black-3;
+            color: $white-1;
         }
     }
-
-    .bar {
-        display: flex !important;
-    }
-
-    aside {
-        display: flex !important;
-        position: absolute;
-        left: 0;
-        transform: translateX(-100%);
-    }
-}
-
-// @include tablet {
-
-// }
-
-// @include mobile {
-
-// }
-
-
-.show {
-    transform: translateX(0);
 }

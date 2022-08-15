@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -61,13 +60,13 @@ html {
 html body {
   width: 100%;
   height: 100%;
+  background: #fff;
+  color: #5f6368;
   font-family: "Noto Sans KR", sans-serif;
-  color: rgb(95, 99, 104);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  white-space: nowrap;
 }
 html body #index {
   display: flex;
@@ -76,278 +75,107 @@ html body #index {
   justify-content: center;
   position: relative;
 }
-html body #index .container {
-  display: flex;
+html body #index main {
   max-width: 1000px;
   width: 100%;
   height: 100%;
-  justify-content: center;
+  border-width: 0px 1px 0px 1px;
+  border-style: solid;
 }
-html body #index .container main {
-  width: 1000px;
-  height: 100%;
-}
-html body #index .container main header {
+html body #index main header {
   display: flex;
-  width: 100%;
-  height: 3.5rem;
+  width: inherit;
+  height: calc(4rem - 1px);
   justify-content: space-between;
 }
-html body #index .container main header .logo {
-  width: 150px;
-  height: 100%;
+html body #index main header .logo {
   display: flex;
+  width: 12rem;
+  height: 100%;
   justify-content: center;
   align-items: center;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  -moz-column-gap: 0.75rem;
+       column-gap: 0.75rem;
 }
-html body #index .container main header .bar {
-  display: none;
-  width: 3.5rem;
-  height: 3.5rem;
-  justify-content: center;
-  align-items: center;
+html body #index main header .logo i {
   font-size: 2rem;
-  pointer-events: none;
 }
-html body #index .container main header .bar i {
-  cursor: pointer;
-  pointer-events: auto;
-}
-html body #index .container main header nav {
+html body #index main header nav {
   display: flex;
-  width: 600px;
-  height: 100%;
 }
-html body #index .container main header nav .menu {
-  width: 25%;
-  height: 100%;
+html body #index main header nav .menu {
   display: flex;
+  width: 5.5rem;
+  height: 100%;
   justify-content: center;
   align-items: center;
+  padding: 0 1rem;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  background: var(--bg);
-  box-sizing: border-box;
-  font-weight: bold;
-  --blue-1: rgba(26, 115, 232, .15);
-  --blue-2: red;
 }
-html body #index .container main header nav .menu .effect {
-  width: 20rem;
-  height: 20rem;
-  position: absolute;
-  top: var(--top);
-  left: var(--left);
-  background: var(--blue-1);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  pointer-events: none;
-  -webkit-animation: effect 500ms ease;
-          animation: effect 500ms ease;
-}
-@-webkit-keyframes effect {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0);
-  }
-  30% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-@keyframes effect {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0);
-  }
-  30% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-html body #index .container main header nav .hover {
-  background: #f5f5f5;
-}
-html body #index .container main header nav .hover-dark {
-  background: #373737;
-}
-html body #index .container main .content {
-  width: 100%;
-  height: calc(100% - 3.55rem);
-  box-sizing: border-box;
-  position: relative;
-}
-html body #index .container main .content .area_1 {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  position: relative;
-}
-html body #index .container main .content .area_1 img {
-  border-radius: 50%;
-  transform: scale(0.55);
-  opacity: 0.9;
-  border: 0.5rem solid #fff;
-  box-shadow: 0px 0px 2px 6px #eee;
-}
-html body #index .container main .content .area_1_1 {
-  width: 100%;
-  height: 50%;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  background: #e1f5fe;
-  border-bottom: 1px solid rgb(218, 220, 224);
-}
-html body #index .container main .content .area_1_1::after {
-  content: '" 빨리가는 유일한 방법은 제대로 가는 것이다 "';
-  position: absolute;
-  bottom: 0.5rem;
-  right: 0.5rem;
-  color: #757575;
-}
-html body #index .container main .content .area_1_2 {
-  width: 100%;
-  height: 50%;
-  position: absolute;
-  z-index: -1;
-  bottom: 0;
-}
-html body #index .container main .content .area_1_2::after {
-  content: "- Robert.C Martin -";
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-  color: #bdbdbd;
-  font-size: 0.75rem;
-}
-html body #index .container aside {
-  display: none;
-  width: 300px;
-  height: 100%;
-  flex-direction: column;
+html body #index main .light-w-bg-header {
   background: #fff;
-  row-gap: 1rem;
-  transition: transform 0.2s ease;
-  z-index: 10;
 }
-html body #index .container aside .logo {
-  width: 100%;
-  height: 3.75rem;
+html body #index main .light-d-bg-header {
+  background: #212121;
+}
+html body #index .line {
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid;
+}
+html body #index .bd-w {
+  border-color: #cfd8dc;
+}
+html body #index .bd-d {
+  border-color: #424242;
+}
+html body #index .light-w-bg-main {
+  background: #fafafa;
+}
+html body #index .light-d-bg-main {
+  background: #1b1b1b;
+}
+html body .mod {
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 1.25rem;
-  font-weight: bold;
-  border-bottom: 1px solid rgb(218, 220, 224);
-}
-html body #index .container aside nav {
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-html body #index .container aside nav .menu {
-  width: 100%;
-  height: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  background: var(--bg);
-  box-sizing: border-box;
-  font-weight: bold;
-  justify-content: flex-start;
-  padding: 0 1.5rem;
-}
-html body .active {
-  color: rgb(26, 115, 232);
-  border-bottom: 2px solid rgb(26, 115, 232);
-}
-html body .active-dark {
-  color: #8ab4f8;
-  border-bottom: 2px solid #8ab4f8;
-}
-html body .bd-b {
-  border-bottom: 1px solid rgb(218, 220, 224);
-}
-html body .bd-l {
-  border-left: 1px solid rgb(218, 220, 224);
-}
-html body .bd-r {
-  border-right: 1px solid rgb(218, 220, 224);
-}
-html body .dark-1 {
-  background: #1e1f21 !important;
-  color: #fafafa !important;
-}
-html body .dark-2 {
-  background: rgb(41, 42, 45) !important;
-}
-html body .dark-bd {
-  border-color: #424242 !important;
-}
-html .close {
-  display: none;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
   position: absolute;
-}
-html .open {
-  display: flex;
-  z-index: 5;
-}
-html .dark-mod {
-  display: flex;
-  width: 2.5rem;
-  height: 2.5rem;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-  border-radius: 50%;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: bold;
   cursor: pointer;
+  box-sizing: border-box;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+html body .mod i {
   pointer-events: none;
+  font-size: 0.9rem;
 }
-html .dark-mod i {
-  pointer-events: auto;
+html body .mod-bg-w-w {
+  background: lightgray;
 }
-html .dark-mod i:hover {
+html body .mod-bg-w-d {
+  background: #424242;
+  color: #fff;
+}
+html body .mod-bg-w-d i {
   color: #ffd600;
 }
-html .mod-change {
-  color: #ffd600;
+html body .mod-bg-d-d {
+  background: #424242;
 }
-
-@media all and (max-width: 1000px) {
-  header nav {
-    display: none !important;
-  }
-  .bar {
-    display: flex !important;
-  }
-  aside {
-    display: flex !important;
-    position: absolute;
-    left: 0;
-    transform: translateX(-100%);
-  }
+html body .mod-bg-d-w {
+  background: #616161;
 }
-.show {
-  transform: translateX(0);
+html body .mod-bg-d-w i {
+  color: #ff6d00;
+}
+html body .d-mod {
+  background: #212121;
+  color: #fafafa;
 }/*# sourceMappingURL=main.css.map */
