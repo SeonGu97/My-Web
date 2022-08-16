@@ -35,6 +35,7 @@ html {
         background: $primary-white;
         color: $primary-black;
         font-family: 'Noto Sans KR', sans-serif;
+        white-space: nowrap;
 
         // 드래그 방지.
         -webkit-user-select:none;
@@ -53,6 +54,8 @@ html {
                 @include full-size();
                 border-width: 0px 1px 0px 1px;
                 border-style: solid;
+                flex: none;
+                box-sizing: border-box;
 
                 header {
                     display: flex;
@@ -62,16 +65,26 @@ html {
 
                     .logo {
                         display: flex;
-                        width: 12rem;
+                        width: $primary-size * 12;
                         height: 100%;
                         justify-content: center;
                         align-items: center;
                         font-size: 1.5rem;
                         font-weight: bold;
                         column-gap: .75rem;
+                    }
+
+                    .bar {
+                        display: none;
+                        width: 2rem;
+                        justify-content: center;
+                        padding: $primary-size / 2;
+                        font-size: $primary-size * 1.75;
+                        pointer-events: none;
 
                         i {
-                            font-size: 2rem;
+                            pointer-events: auto;
+                            cursor: pointer;
                         }
                     }
 
@@ -135,6 +148,7 @@ html {
             cursor: pointer;
             box-sizing: border-box;
             column-gap: $primary-size / 2;
+            z-index: 20;
 
             i {
                 pointer-events: none;
@@ -170,6 +184,96 @@ html {
         .d-mod {
             background: $black-3;
             color: $white-1;
+        }
+
+        aside {
+            width: $primary-size * 15;
+            height: 100%;
+            transform: translateX(-100%);
+            transition: transform 0.2s ease;
+            border-right: 1px solid;
+            position: fixed;
+            left: 0;
+            z-index: 15;
+
+            .logo {
+                display: flex;
+                width: 100%;
+                height: $primary-size * 3;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+                font-size: $primary-size + .25 !important;
+            }
+
+            nav {
+                display: flex;
+                flex-direction: column;
+
+                .menu {
+                    display: flex;
+                    width: 100%;
+                    height: $primary-size * 3;
+                    align-items: center;
+                    padding: 0 $primary-size;
+                    box-sizing: border-box;
+                }
+            }
+        }
+
+        .light-w-bg-aside {
+            background: $primary-white;
+        }
+
+        .light-d-bg-aside {
+            background: $black-3;
+        }
+
+        .hide-on-bush {
+            transform: translateX(0%);
+        }
+
+        .exit {
+            display: none;
+            position: fixed;
+            @include full-size();
+            z-index: 10;
+        }
+
+        .light-w-bg-exit {
+            background: $black-3;
+            opacity: .5;
+        }
+
+        .light-d-bg-exit {
+            background: $primary-white;
+            opacity: .1;
+        }
+
+        .show-exit {
+            display: block;
+        }
+    }
+}
+
+@import './media.scss';
+
+@include pc {
+    header {
+        height: $primary-size * 3 !important;
+        
+        .logo {
+            width: $primary-size * 10 !important;
+            font-size: $primary-size + .25 !important;
+        }
+
+        .bar {
+            display: flex !important;
+        }
+
+        nav {
+            display: none !important;
         }
     }
 }

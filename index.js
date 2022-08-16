@@ -2,7 +2,10 @@
 
 import Creator from "./Javascript/Create/creator.js";
 import Main from "./Javascript/Main/main.js";
+import Aside from "./Javascript/Aside/aside.js";
 import Mod from "./Javascript/Mod/mod.js";
+import Exit from "./Javascript/Aside/exit.js";
+import Resize from "./Javascript/resize.js";
 
 export default class Index {
     constructor(creator) {
@@ -10,7 +13,13 @@ export default class Index {
         
         const main = new Main(creator, index.name);
 
+        const aside = new Aside(creator, index.name);
+
+        const exit = new Exit(creator, index.name);
+
         const mod = new Mod(creator, index.name);
+
+        const resize = Resize;
     }
 }
 

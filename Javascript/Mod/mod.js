@@ -15,7 +15,9 @@ export default class Mod {
         const index = document.querySelector('#index');
         const header = document.querySelector('header');
         const main = document.querySelector('main');
-        const line = document.querySelector('.line');
+        const line = document.querySelectorAll('.line');
+        const aside = document.querySelector('aside');
+        const exit = document.querySelector('.exit');
 
         const icons = ['<i class="fa-solid fa-moon"></i> 다크모드로 보기', '<i class="bi bi-sun-fill"></i> 라이트모드로 보기'];
 
@@ -24,7 +26,7 @@ export default class Mod {
 
             target.classList.toggle('mod-change');
 
-            this.active(target, main, header, line, icons, name, value);
+            this.active(target, main, header, line, icons, name, value, aside, exit);
         });
    
         mod.name.addEventListener('mouseenter', e => {
@@ -51,10 +53,10 @@ export default class Mod {
             }
         });
 
-        this.maintain(mod.name, main, header, line, icons, name, value);
+        this.maintain(mod.name, main, header, line, icons, name, value, aside, exit);
     }
 
-    maintain(mod, main, header, line, icons, name, value) {
+    maintain(mod, main, header, line, icons, name, value, aside, exit) {
         if(value[0]) {
             mod.classList.add('mod-change');
             mod.classList.replace('mod-bg-w-w', 'mod-bg-d-d');
@@ -63,10 +65,10 @@ export default class Mod {
 
         }
 
-        this.active(mod, main, header, line, icons, name, value);
+        this.active(mod, main, header, line, icons, name, value, aside, exit);
     }
 
-    active(target, main, header, line, icons, name, value) {
+    active(target, main, header, line, icons, name, value, aside, exit) {
         let boolean = target.classList.contains('mod-change') ? true : false;
 
         value.push(boolean);
@@ -78,7 +80,11 @@ export default class Mod {
             main.classList.replace('bd-w', 'bd-d');
             main.classList.replace('light-w-bg-main', 'light-d-bg-main');
             header.classList.replace('light-w-bg-header', 'light-d-bg-header');
-            line.classList.replace('bd-w', 'bd-d');
+            line[0].classList.replace('bd-w', 'bd-d');
+            line[1].classList.replace('bd-w', 'bd-d');
+            aside.classList.replace('light-w-bg-aside', 'light-d-bg-aside');
+            aside.classList.replace('bd-w', 'bd-d');
+            exit.classList.replace('light-w-bg-exit', 'light-d-bg-exit');
 
             target.innerHTML = target.innerHTML.replace(icons[0], icons[1]);
         }else {
@@ -87,7 +93,11 @@ export default class Mod {
             main.classList.replace('bd-d', 'bd-w');
             main.classList.replace('light-d-bg-main', 'light-w-bg-main');
             header.classList.replace('light-d-bg-header', 'light-w-bg-header');
-            line.classList.replace('bd-d', 'bd-w');
+            line[0].classList.replace('bd-d', 'bd-w');
+            line[1].classList.replace('bd-d', 'bd-w');
+            aside.classList.replace('light-d-bg-aside', 'light-w-bg-aside');
+            aside.classList.replace('bd-d', 'bd-w');
+            exit.classList.replace('light-d-bg-exit', 'light-w-bg-exit');
 
             target.innerHTML = target.innerHTML.replace(icons[1], icons[0]);
         }
