@@ -18,6 +18,7 @@ export default class Mod {
         const line = document.querySelectorAll('.line');
         const aside = document.querySelector('aside');
         const exit = document.querySelector('.exit');
+        const nav = document.querySelectorAll('nav');
 
         const icons = ['<i class="fa-solid fa-moon"></i> 다크모드로 보기', '<i class="bi bi-sun-fill"></i> 라이트모드로 보기'];
 
@@ -27,6 +28,8 @@ export default class Mod {
             target.classList.toggle('mod-change');
 
             this.active(target, main, header, line, icons, name, value, aside, exit);
+
+            this.activeChange(nav, value);
         });
    
         mod.name.addEventListener('mouseenter', e => {
@@ -107,5 +110,32 @@ export default class Mod {
 
     setStorage(name, value) {
         localStorage.setItem(name, JSON.stringify(value));
+    }
+
+    activeChange(nav, value) {
+        const name = 'index';
+        let _value;
+
+        if(localStorage.getItem(name) === null) {
+            _value = [];
+        }else {
+            _value = JSON.parse(localStorage.getItem(name));
+        }
+
+        nav.forEach((element, index, array) => {
+            if(value[0]) {
+                array[0].childNodes[_value].classList.replace('active-w','active-d');
+                array[0].childNodes[_value].classList.replace('active-w-bd','active-d-bd');
+
+                array[1].childNodes[_value].classList.replace('active-bg','active-bg-d');
+                array[1].childNodes[_value].classList.remove('active-w');
+            }else {
+                array[0].childNodes[_value].classList.replace('active-d','active-w');
+                array[0].childNodes[_value].classList.replace('active-d-bd','active-w-bd');
+
+                array[1].childNodes[_value].classList.replace('active-bg-d','active-bg');
+                array[1].childNodes[_value].classList.add('active-w');
+            }
+        });
     }
 }
