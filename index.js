@@ -28,6 +28,7 @@ export default class Index {
 
         if(localStorage.getItem(name) === null) {
             value = [];
+            value.push(0);
         }else {
             value = JSON.parse(localStorage.getItem(name));
         }
