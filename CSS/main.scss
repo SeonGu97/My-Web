@@ -37,6 +37,8 @@ $moon: #ffd600;
 $sun: #ff6d00;
 $sea: #1a73e8;
 $sky: #8ab4f8;
+$sea-a: rgba(26, 115, 232, .25);
+$sky-a: rgba(138, 180, 248, .25);
 
 html {
     @include full-size();
@@ -101,13 +103,52 @@ html {
 
                     nav {
                         display: flex;
-                        pointer-events: none;
 
                         .menu {
                             @include menu();
                             width: 7.5rem;
                             height: 100%;
                             justify-content: center;
+                            position: relative;
+                            overflow: hidden;
+
+                            .effect {
+                                width: 17.5rem;
+                                height: 17.5rem;
+                                border-radius: 50%;
+                                pointer-events: none;
+                                transform: translate(-50%, -50%);
+                                background: var(--sky-a);
+                                position: absolute;
+                                top: var(--top);
+                                left: var(--left);
+                                opacity: 0;
+                                animation: effect .5s ease;
+                            }
+
+                            @keyframes effect {
+                                0% {
+                                    opacity: 0;
+                                    transform: translate(-50%, -50%) scale(0);
+                                }
+
+                                30% {
+                                    opacity: 1;
+                                }
+
+                                100% {
+                                    opacity: 0;
+                                    transform: translate(-50%, -50%) scale(1);
+                                }
+                            }
+
+                            .effect-w {
+                                background: $sea-a;
+                            }
+
+                            .effect-d {
+                                background: $sky-a;
+                            }   
                         }
                     }
                 }

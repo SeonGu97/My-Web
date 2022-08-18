@@ -116,7 +116,6 @@ html body #index main header .bar i {
 }
 html body #index main header nav {
   display: flex;
-  pointer-events: none;
 }
 html body #index main header nav .menu {
   display: flex;
@@ -129,6 +128,54 @@ html body #index main header nav .menu {
   width: 7.5rem;
   height: 100%;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+html body #index main header nav .menu .effect {
+  width: 17.5rem;
+  height: 17.5rem;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: var(--sky-a);
+  position: absolute;
+  top: var(--top);
+  left: var(--left);
+  opacity: 0;
+  -webkit-animation: effect 0.5s ease;
+          animation: effect 0.5s ease;
+}
+@-webkit-keyframes effect {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes effect {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+html body #index main header nav .menu .effect-w {
+  background: rgba(26, 115, 232, 0.25);
+}
+html body #index main header nav .menu .effect-d {
+  background: rgba(138, 180, 248, 0.25);
 }
 html body #index main .light-w-bg-header {
   background: #fff;
