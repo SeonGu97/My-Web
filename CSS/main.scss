@@ -160,6 +160,52 @@ html {
                 .light-d-bg-header {
                     background: $black-3;
                 }
+
+                .container {
+                    padding: 0 $primary-size;
+
+                    .motto {
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: $primary-size * 3.5 0;
+                        row-gap: $primary-size;
+                        font-size: $primary-size * 1.5;
+                        box-sizing: border-box;
+
+                        @mixin icons {
+                            content: '\F6B0';
+                            font-family: bootstrap-icons;
+                            font-size: $primary-size * 1.5;
+                            font-weight: 300;
+                            position: absolute;
+                            top: 0;
+                        }
+
+                        .sentence {
+                            position: relative;
+                            font-weight: bold;
+
+                            &::after {
+                                @include icons();
+                                left: -$primary-size * 2;
+                            }
+
+                            &::before {
+                                @include icons();
+                                transform: rotate(.5turn);
+                                right: -$primary-size * 2;
+                            }
+                        }
+
+                        .saying {
+                            font-size: $primary-size;
+                            opacity: .75;
+                        }
+                    }
+                }
             }
 
             .line {
@@ -264,7 +310,7 @@ html {
             nav {
                 display: flex;
                 flex-direction: column;
-                padding: $primary-size $primary-size / 2 $primary-size 0;
+                padding: ($primary-size) ($primary-size / 2) ($primary-size) 0;
                 box-sizing: border-box;
                 pointer-events: none;
 
@@ -356,6 +402,25 @@ html {
 
         nav {
             display: none !important;
+        }
+    }
+
+    .container {
+        width: 100%;
+        height: calc(100% - ($primary-size * 3) - 1px) !important;
+        box-sizing: border-box !important;
+
+        .motto {
+            padding: $primary-size * 2.5 0 !important;
+            font-size: $primary-size !important;
+
+            .sentence {
+                font-size: $primary-size * 1.25 !important;
+            }
+
+            .saying {
+                font-size: $primary-size / 1.5 !important;
+            }
         }
     }
 }

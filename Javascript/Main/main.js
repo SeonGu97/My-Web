@@ -1,8 +1,9 @@
 'use strict';
 
+import Container from "../Container/container.js";
 import Header from "../Header/header.js";
 import Line from "../line.js";
-import Effect from "../Header/effect.js";
+
 
 export default class Main {
     constructor(creator, index) {
@@ -10,6 +11,7 @@ export default class Main {
     
         const header = new Header(creator, main.name);
         const line = new Line(creator, main.name);
+        const container = new Container(creator, main.name);
 
         const nav = document.querySelector('nav');
         nav.childNodes.forEach(element => {

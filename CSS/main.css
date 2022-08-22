@@ -183,6 +183,47 @@ html body #index main .light-w-bg-header {
 html body #index main .light-d-bg-header {
   background: #212121;
 }
+html body #index main .container {
+  padding: 0 1rem;
+}
+html body #index main .container .motto {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3.5rem 0;
+  row-gap: 1rem;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+}
+html body #index main .container .motto .sentence {
+  position: relative;
+  font-weight: bold;
+}
+html body #index main .container .motto .sentence::after {
+  content: "\f6b0";
+  font-family: bootstrap-icons;
+  font-size: 1.5rem;
+  font-weight: 300;
+  position: absolute;
+  top: 0;
+  left: -2rem;
+}
+html body #index main .container .motto .sentence::before {
+  content: "\f6b0";
+  font-family: bootstrap-icons;
+  font-size: 1.5rem;
+  font-weight: 300;
+  position: absolute;
+  top: 0;
+  transform: rotate(0.5turn);
+  right: -2rem;
+}
+html body #index main .container .motto .saying {
+  font-size: 1rem;
+  opacity: 0.75;
+}
 html body #index .line {
   margin: 0;
   border: none;
@@ -347,5 +388,20 @@ html body .active-bg-d {
   }
   header nav {
     display: none !important;
+  }
+  .container {
+    width: 100%;
+    height: calc(100% - 3rem - 1px) !important;
+    box-sizing: border-box !important;
+  }
+  .container .motto {
+    padding: 2.5rem 0 !important;
+    font-size: 1rem !important;
+  }
+  .container .motto .sentence {
+    font-size: 1.25rem !important;
+  }
+  .container .motto .saying {
+    font-size: 0.6666666667rem !important;
   }
 }/*# sourceMappingURL=main.css.map */
