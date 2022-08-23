@@ -387,7 +387,7 @@ html {
 
 @import './media.scss';
 
-@include pc {
+@include tablet {
     header {
         height: $primary-size * 3 !important;
         
@@ -406,16 +406,65 @@ html {
     }
 
     .container {
-        width: 100%;
-        height: calc(100% - ($primary-size * 3) - 1px) !important;
-        box-sizing: border-box !important;
 
         .motto {
-            padding: $primary-size * 2.5 0 !important;
+            font-size: $primary-size * 1.25 !important;
+
+            .sentence {
+
+                &::after {
+                    font-size: $primary-size * 1.25 !important;
+                    left: -$primary-size * 1.5 !important;
+                }
+
+                &::before {
+                    font-size: $primary-size * 1.25 !important;
+                    right: -$primary-size * 1.5 !important;
+                }
+            }
+
+            .saying {
+                font-size: $primary-size / 1.25 !important;
+            }
+        }
+    }
+}
+
+@include mobile {
+    header {
+        height: $primary-size * 3 !important;
+        
+        .logo {
+            width: $primary-size * 10 !important;
+            font-size: $primary-size + .25 !important;
+        }
+
+        .bar {
+            display: flex !important;
+        }
+
+        nav {
+            display: none !important;
+        }
+    }
+
+    .container {
+        padding: 0 $primary-size / 2 !important;
+
+        .motto {
             font-size: $primary-size !important;
 
             .sentence {
-                font-size: $primary-size * 1.25 !important;
+
+                &::after {
+                    font-size: $primary-size !important;
+                    left: -$primary-size * 1.15 !important;
+                }
+
+                &::before {
+                    font-size: $primary-size !important;
+                    right: -$primary-size * 1.15 !important;
+                }
             }
 
             .saying {

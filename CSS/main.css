@@ -389,17 +389,48 @@ html body .active-bg-d {
   header nav {
     display: none !important;
   }
+  .container .motto {
+    font-size: 1.25rem !important;
+  }
+  .container .motto .sentence::after {
+    font-size: 1.25rem !important;
+    left: -1.5rem !important;
+  }
+  .container .motto .sentence::before {
+    font-size: 1.25rem !important;
+    right: -1.5rem !important;
+  }
+  .container .motto .saying {
+    font-size: 0.8rem !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  header {
+    height: 3rem !important;
+  }
+  header .logo {
+    width: 10rem !important;
+    font-size: 1.25rem !important;
+  }
+  header .bar {
+    display: flex !important;
+  }
+  header nav {
+    display: none !important;
+  }
   .container {
-    width: 100%;
-    height: calc(100% - 3rem - 1px) !important;
-    box-sizing: border-box !important;
+    padding: 0 0.5rem !important;
   }
   .container .motto {
-    padding: 2.5rem 0 !important;
     font-size: 1rem !important;
   }
-  .container .motto .sentence {
-    font-size: 1.25rem !important;
+  .container .motto .sentence::after {
+    font-size: 1rem !important;
+    left: -1.15rem !important;
+  }
+  .container .motto .sentence::before {
+    font-size: 1rem !important;
+    right: -1.15rem !important;
   }
   .container .motto .saying {
     font-size: 0.6666666667rem !important;
