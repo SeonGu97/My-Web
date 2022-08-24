@@ -40,6 +40,8 @@ $sky: #8ab4f8;
 $sea-a: rgba(26, 115, 232, .25);
 $sky-a: rgba(138, 180, 248, .25);
 
+$lightblue: #e1f5fe;
+
 html {
     @include full-size();
 
@@ -162,7 +164,6 @@ html {
                 }
 
                 .container {
-                    padding: 0 $primary-size;
 
                     .motto {
                         display: flex;
@@ -206,6 +207,23 @@ html {
                         }
                     }
                 }
+
+                .profile {
+                    display: flex;
+                    justify-content: center;
+                    padding: $primary-size * 3.5 0;
+                    position: relative;
+
+                    .picture {
+                        width: $primary-size * 12.5;
+                        border-radius: 50%;
+                        position: relative;
+                        z-index: 5;
+                        box-sizing: border-box;
+                        border-width: 5px;
+                        border-style: solid;
+                    }
+                }
             }
 
             .line {
@@ -228,6 +246,22 @@ html {
 
             .light-d-bg-main {
                 background: $black-4;
+            }
+
+            .gradient-w {
+                background: linear-gradient($lightblue, 75%, $white-1);
+            }
+
+            .profile-bd-w {
+                border-color: $primary-white;
+            }
+
+            .profile-bd-d {
+                border-color: $black-2;
+            }
+
+            .gradient-d {
+                background: linear-gradient($black-3, 70%, $black-4);
             }
         }
 
@@ -449,7 +483,6 @@ html {
     }
 
     .container {
-        padding: 0 $primary-size / 2 !important;
 
         .motto {
             font-size: $primary-size !important;

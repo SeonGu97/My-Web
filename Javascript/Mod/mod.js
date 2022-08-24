@@ -19,6 +19,8 @@ export default class Mod {
         const aside = document.querySelector('aside');
         const exit = document.querySelector('.exit');
         const nav = document.querySelectorAll('nav');
+        const profile = document.querySelector('.profile');
+        const picture = document.querySelector('.picture');
 
         const icons = ['<i class="fa-solid fa-moon"></i> 다크모드로 보기', '<i class="bi bi-sun-fill"></i> 라이트모드로 보기'];
 
@@ -27,7 +29,7 @@ export default class Mod {
 
             target.classList.toggle('mod-change');
 
-            this.active(target, main, header, line, icons, name, value, aside, exit);
+            this.active(target, main, header, line, icons, name, value, aside, exit, profile, picture);
 
             this.activeChange(nav, value);
         });
@@ -56,10 +58,10 @@ export default class Mod {
             }
         });
 
-        this.maintain(mod.name, main, header, line, icons, name, value, aside, exit);
+        this.maintain(mod.name, main, header, line, icons, name, value, aside, exit, profile, picture);
     }
 
-    maintain(mod, main, header, line, icons, name, value, aside, exit) {
+    maintain(mod, main, header, line, icons, name, value, aside, exit, profile, picture) {
         if(value[0]) {
             mod.classList.add('mod-change');
             mod.classList.replace('mod-bg-w-w', 'mod-bg-d-d');
@@ -68,10 +70,10 @@ export default class Mod {
 
         }
 
-        this.active(mod, main, header, line, icons, name, value, aside, exit);
+        this.active(mod, main, header, line, icons, name, value, aside, exit, profile, picture);
     }
 
-    active(target, main, header, line, icons, name, value, aside, exit) {
+    active(target, main, header, line, icons, name, value, aside, exit, profile, picture) {
         let boolean = target.classList.contains('mod-change') ? true : false;
 
         value.push(boolean);
@@ -88,6 +90,8 @@ export default class Mod {
             aside.classList.replace('light-w-bg-aside', 'light-d-bg-aside');
             aside.classList.replace('bd-w', 'bd-d');
             exit.classList.replace('light-w-bg-exit', 'light-d-bg-exit');
+            profile.classList.replace('gradient-w', 'gradient-d');
+            picture.classList.replace('profile-bd-w', 'profile-bd-d');
 
             target.innerHTML = target.innerHTML.replace(icons[0], icons[1]);
         }else {
@@ -101,6 +105,8 @@ export default class Mod {
             aside.classList.replace('light-d-bg-aside', 'light-w-bg-aside');
             aside.classList.replace('bd-d', 'bd-w');
             exit.classList.replace('light-d-bg-exit', 'light-w-bg-exit');
+            profile.classList.replace('gradient-d', 'gradient-w');
+            picture.classList.replace('profile-bd-d', 'profile-bd-w');
 
             target.innerHTML = target.innerHTML.replace(icons[1], icons[0]);
         }

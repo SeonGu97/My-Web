@@ -183,9 +183,6 @@ html body #index main .light-w-bg-header {
 html body #index main .light-d-bg-header {
   background: #212121;
 }
-html body #index main .container {
-  padding: 0 1rem;
-}
 html body #index main .container .motto {
   display: flex;
   width: 100%;
@@ -224,6 +221,21 @@ html body #index main .container .motto .saying {
   font-size: 1rem;
   opacity: 0.75;
 }
+html body #index main .profile {
+  display: flex;
+  justify-content: center;
+  padding: 3.5rem 0;
+  position: relative;
+}
+html body #index main .profile .picture {
+  width: 12.5rem;
+  border-radius: 50%;
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+  border-width: 5px;
+  border-style: solid;
+}
 html body #index .line {
   margin: 0;
   border: none;
@@ -240,6 +252,18 @@ html body #index .light-w-bg-main {
 }
 html body #index .light-d-bg-main {
   background: #1b1b1b;
+}
+html body #index .gradient-w {
+  background: linear-gradient(#e1f5fe, 75%, #fafafa);
+}
+html body #index .profile-bd-w {
+  border-color: #fff;
+}
+html body #index .profile-bd-d {
+  border-color: #424242;
+}
+html body #index .gradient-d {
+  background: linear-gradient(#212121, 70%, #1b1b1b);
 }
 html body .mod {
   display: flex;
@@ -417,9 +441,6 @@ html body .active-bg-d {
   }
   header nav {
     display: none !important;
-  }
-  .container {
-    padding: 0 0.5rem !important;
   }
   .container .motto {
     font-size: 1rem !important;

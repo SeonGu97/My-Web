@@ -2,6 +2,7 @@
 
 import Motto from "./motto.js";
 import Line from "../line.js";
+import Profile from "./profile.js";
 
 export default class Container {
     constructor(creator, main) {
@@ -9,5 +10,6 @@ export default class Container {
     
         const motto = new Motto(creator, container.name);
         const line = new Line(creator, container.name);
+        const profile = new Profile(creator, container.name);
     }
 }
