@@ -206,22 +206,49 @@ html {
                             opacity: .75;
                         }
                     }
-                }
 
-                .profile {
-                    display: flex;
-                    justify-content: center;
-                    padding: $primary-size * 3.5 0;
-                    position: relative;
-
-                    .picture {
-                        width: $primary-size * 12.5;
-                        border-radius: 50%;
+                    .profile {
+                        display: flex;
+                        justify-content: center;
+                        padding: $primary-size * 3.5 0;
                         position: relative;
-                        z-index: 5;
-                        box-sizing: border-box;
-                        border-width: 5px;
-                        border-style: solid;
+    
+                        .picture {
+                            width: $primary-size * 12.5;
+                            border-radius: 50%;
+                            position: relative;
+                            z-index: 5;
+                            box-sizing: border-box;
+                            border-width: 5px;
+                            border-style: solid;
+                        }
+                    }
+    
+                    .infor {
+                        display: flex;
+                        justify-content: center;
+                        padding-bottom: $primary-size * 3.5;
+
+                        .library {
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: $primary-size * 2;
+
+                            .book {
+                                display: flex;
+                                list-style: none;
+                                column-gap: $primary-size * 1.5;
+                                font-weight: bold;
+
+                                .name {
+                                    color: #aeaeae;
+                                }
+
+                                .value {
+
+                                }
+                            }
+                        }
                     }
                 }
             }

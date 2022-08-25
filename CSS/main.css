@@ -221,13 +221,13 @@ html body #index main .container .motto .saying {
   font-size: 1rem;
   opacity: 0.75;
 }
-html body #index main .profile {
+html body #index main .container .profile {
   display: flex;
   justify-content: center;
   padding: 3.5rem 0;
   position: relative;
 }
-html body #index main .profile .picture {
+html body #index main .container .profile .picture {
   width: 12.5rem;
   border-radius: 50%;
   position: relative;
@@ -235,6 +235,26 @@ html body #index main .profile .picture {
   box-sizing: border-box;
   border-width: 5px;
   border-style: solid;
+}
+html body #index main .container .infor {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3.5rem;
+}
+html body #index main .container .infor .library {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+html body #index main .container .infor .library .book {
+  display: flex;
+  list-style: none;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+  font-weight: bold;
+}
+html body #index main .container .infor .library .book .name {
+  color: #aeaeae;
 }
 html body #index .line {
   margin: 0;
