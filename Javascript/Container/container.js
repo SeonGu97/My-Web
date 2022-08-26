@@ -4,6 +4,7 @@ import Motto from "./motto.js";
 import Line from "../line.js";
 import Profile from "./profile.js";
 import Infor from "./infor.js";
+import Skill from "./skill.js";
 
 export default class Container {
     constructor(creator, main) {
@@ -14,5 +15,7 @@ export default class Container {
         const profile = new Profile(creator, container.name);
         const infor = new Infor(creator, container.name);
         const line2 = new Line(creator, container.name);
+        const skill = new Skill(creator, container.name);
+        const line3 = new Line(creator, container.name);
     }
 }

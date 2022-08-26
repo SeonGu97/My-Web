@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -72,7 +73,9 @@ html body {
 html body #index {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   justify-content: center;
   position: relative;
 }
@@ -80,6 +83,9 @@ html body #index main {
   max-width: 1000px;
   width: 100%;
   height: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   border-width: 0px 1px 0px 1px;
   border-style: solid;
   flex: none;
@@ -256,6 +262,48 @@ html body #index main .container .infor .library .book {
 html body #index main .container .infor .library .book .name {
   color: #aeaeae;
 }
+html body #index main .container .skill {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  padding: 2.5rem 0;
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
+}
+html body #index main .container .skill .skill-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.5rem;
+}
+html body #index main .container .skill .skill-icon:nth-child(1) {
+  color: #dd2c00;
+}
+html body #index main .container .skill .skill-icon:nth-child(2) {
+  color: #0091ea;
+}
+html body #index main .container .skill .skill-icon:nth-child(3) {
+  color: #ffd600;
+  position: relative;
+}
+html body #index main .container .skill .skill-icon:nth-child(3)::after {
+  content: "👑";
+  font-size: 1rem;
+  position: absolute;
+  top: -5px;
+  right: 5px;
+  transform: rotate(0.1turn);
+}
+html body #index main .container .skill .skill-icon:nth-child(4) {
+  color: #263238;
+}
+html body #index main .container .skill .skill-name {
+  font-size: 1rem;
+  font-weight: bold;
+}
+html body #index main .container .skill-d {
+  color: #cfd8dc;
+}
 html body #index .line {
   margin: 0;
   border: none;
@@ -276,19 +324,19 @@ html body #index .light-d-bg-main {
 html body #index .gradient-w {
   background: linear-gradient(#e1f5fe, 75%, #fafafa);
 }
+html body #index .gradient-d {
+  background: linear-gradient(#212121, 70%, #1b1b1b);
+}
 html body #index .profile-bd-w {
   border-color: #fff;
 }
 html body #index .profile-bd-d {
   border-color: #424242;
 }
-html body #index .gradient-d {
-  background: linear-gradient(#212121, 70%, #1b1b1b);
-}
 html body .mod {
   display: flex;
   align-items: center;
-  position: absolute;
+  position: fixed;
   right: 1.5rem;
   bottom: 1.5rem;
   padding: 1rem;
@@ -475,5 +523,18 @@ html body .active-bg-d {
   }
   .container .motto .saying {
     font-size: 0.6666666667rem !important;
+  }
+  .container .skill {
+    font-size: 2rem !important;
+    -moz-column-gap: 1.75rem !important;
+         column-gap: 1.75rem !important;
+  }
+  .container .skill .skill-icon .skill-name {
+    font-size: 0.9rem !important;
+  }
+  .container .skill .skill-icon:nth-child(3)::after {
+    font-size: 0.5714285714rem !important;
+    top: -2px !important;
+    right: 12px !important;
   }
 }/*# sourceMappingURL=main.css.map */

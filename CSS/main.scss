@@ -24,7 +24,7 @@ $primary-black: #5f6368;
 
 $gray-1: #eee;
 $gray-2: #e0e0e0;
-$gary-3: #cfd8dc;
+$gray-3: #cfd8dc;
 
 $white-1: #fafafa;
 
@@ -60,13 +60,15 @@ html {
 
         #index {
             display: flex;
-            @include full-size();
+            width: 100%;
+            height: max-content;
             justify-content: center;
             position: relative;
 
             main {
                 max-width: 1000px;
                 @include full-size();
+                height: max-content;
                 border-width: 0px 1px 0px 1px;
                 border-style: solid;
                 flex: none;
@@ -250,6 +252,56 @@ html {
                             }
                         }
                     }
+
+                    .skill {
+                        display: flex;
+                        justify-content: center;
+                        font-size: $primary-size * 3;
+                        padding: $primary-size * 2.5 0;
+                        column-gap: $primary-size * 2.5;
+
+                        .skill-icon {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            row-gap: $primary-size / 2;
+                        }
+
+                        .skill-icon:nth-child(1) {
+                            color: #dd2c00;
+                        }
+
+                        .skill-icon:nth-child(2) {
+                            color: #0091ea;
+                        }
+
+                        .skill-icon:nth-child(3) {
+                            color: #ffd600;
+                            position: relative;
+
+                            &::after {
+                                content: '👑';
+                                font-size: $primary-size;
+                                position: absolute;
+                                top: -5px;
+                                right: 5px;
+                                transform: rotate(.1turn);
+                            }
+                        }
+
+                        .skill-icon:nth-child(4) {
+                            color: #263238;
+                        }
+
+                        .skill-name {
+                            font-size: $primary-size;
+                            font-weight: bold;
+                        }
+                    }
+
+                    .skill-d {
+                        color: $gray-3;
+                    }
                 }
             }
 
@@ -260,7 +312,7 @@ html {
             }
 
             .bd-w {
-                border-color: $gary-3;
+                border-color: $gray-3;
             }
     
             .bd-d {
@@ -279,6 +331,10 @@ html {
                 background: linear-gradient($lightblue, 75%, $white-1);
             }
 
+            .gradient-d {
+                background: linear-gradient($black-3, 70%, $black-4);
+            }
+
             .profile-bd-w {
                 border-color: $primary-white;
             }
@@ -286,16 +342,12 @@ html {
             .profile-bd-d {
                 border-color: $black-2;
             }
-
-            .gradient-d {
-                background: linear-gradient($black-3, 70%, $black-4);
-            }
         }
 
         .mod {
             display: flex;
             align-items: center;
-            position: absolute;
+            position: fixed;
             right: $primary-size * 1.5;
             bottom: $primary-size * 1.5;
             padding: $primary-size * 1;
@@ -529,6 +581,28 @@ html {
 
             .saying {
                 font-size: $primary-size / 1.5 !important;
+            }
+        }
+
+        
+        .skill {
+            font-size: $primary-size * 2 !important;
+            column-gap: $primary-size * 1.75 !important;
+
+            .skill-icon {
+
+                .skill-name {
+                    font-size: $primary-size - .1 !important;
+                }
+            }
+
+            .skill-icon:nth-child(3) {
+
+                &::after {
+                    font-size: $primary-size / 1.75 !important;
+                    top: -2px !important;
+                    right: 12px !important;
+                }
             }
         }
     }

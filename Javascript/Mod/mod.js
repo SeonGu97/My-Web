@@ -21,6 +21,7 @@ export default class Mod {
         const nav = document.querySelectorAll('nav');
         const profile = document.querySelector('.profile');
         const picture = document.querySelector('.picture');
+        const skill_icon = document.querySelectorAll('.skill-icon > .skill-name');
 
         const icons = ['<i class="fa-solid fa-moon"></i> 다크모드로 보기', '<i class="bi bi-sun-fill"></i> 라이트모드로 보기'];
 
@@ -29,7 +30,7 @@ export default class Mod {
 
             target.classList.toggle('mod-change');
 
-            this.active(target, main, header, line, icons, name, value, aside, exit, profile, picture);
+            this.active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon);
 
             this.activeChange(nav, value);
         });
@@ -58,10 +59,10 @@ export default class Mod {
             }
         });
 
-        this.maintain(mod.name, main, header, line, icons, name, value, aside, exit, profile, picture);
+        this.maintain(mod.name, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon);
     }
 
-    maintain(mod, main, header, line, icons, name, value, aside, exit, profile, picture) {
+    maintain(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon) {
         if(value[0]) {
             mod.classList.add('mod-change');
             mod.classList.replace('mod-bg-w-w', 'mod-bg-d-d');
@@ -70,10 +71,10 @@ export default class Mod {
 
         }
 
-        this.active(mod, main, header, line, icons, name, value, aside, exit, profile, picture);
+        this.active(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon);
     }
 
-    active(target, main, header, line, icons, name, value, aside, exit, profile, picture) {
+    active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon) {
         let boolean = target.classList.contains('mod-change') ? true : false;
 
         value.push(boolean);
@@ -85,13 +86,20 @@ export default class Mod {
             main.classList.replace('bd-w', 'bd-d');
             main.classList.replace('light-w-bg-main', 'light-d-bg-main');
             header.classList.replace('light-w-bg-header', 'light-d-bg-header');
-            line[0].classList.replace('bd-w', 'bd-d');
-            line[1].classList.replace('bd-w', 'bd-d');
+
+            for(let i = 0; i < line.length; i++) {
+                line[i].classList.replace('bd-w', 'bd-d');
+            }
+
             aside.classList.replace('light-w-bg-aside', 'light-d-bg-aside');
             aside.classList.replace('bd-w', 'bd-d');
             exit.classList.replace('light-w-bg-exit', 'light-d-bg-exit');
             profile.classList.replace('gradient-w', 'gradient-d');
             picture.classList.replace('profile-bd-w', 'profile-bd-d');
+
+            for(let i = 0; i < skill_icon.length; i++) {
+                skill_icon[i].classList.add('skill-d');
+            }
 
             target.innerHTML = target.innerHTML.replace(icons[0], icons[1]);
         }else {
@@ -100,13 +108,20 @@ export default class Mod {
             main.classList.replace('bd-d', 'bd-w');
             main.classList.replace('light-d-bg-main', 'light-w-bg-main');
             header.classList.replace('light-d-bg-header', 'light-w-bg-header');
-            line[0].classList.replace('bd-d', 'bd-w');
-            line[1].classList.replace('bd-d', 'bd-w');
+
+            for(let i = 0; i < line.length; i++) {
+                line[i].classList.replace('bd-d', 'bd-w');
+            }
+
             aside.classList.replace('light-d-bg-aside', 'light-w-bg-aside');
             aside.classList.replace('bd-d', 'bd-w');
             exit.classList.replace('light-d-bg-exit', 'light-w-bg-exit');
             profile.classList.replace('gradient-d', 'gradient-w');
             picture.classList.replace('profile-bd-d', 'profile-bd-w');
+
+            for(let i = 0; i < skill_icon.length; i++) {
+                skill_icon[i].classList.remove('skill-d');
+            }
 
             target.innerHTML = target.innerHTML.replace(icons[1], icons[0]);
         }
