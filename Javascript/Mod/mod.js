@@ -22,6 +22,7 @@ export default class Mod {
         const profile = document.querySelector('.profile');
         const picture = document.querySelector('.picture');
         const skill_icon = document.querySelectorAll('.skill-icon > .skill-name');
+        const infor = document.querySelector('.infor');
 
         const icons = ['<i class="fa-solid fa-moon"></i> 다크모드로 보기', '<i class="bi bi-sun-fill"></i> 라이트모드로 보기'];
 
@@ -30,7 +31,7 @@ export default class Mod {
 
             target.classList.toggle('mod-change');
 
-            this.active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon);
+            this.active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor);
 
             this.activeChange(nav, value);
         });
@@ -59,10 +60,10 @@ export default class Mod {
             }
         });
 
-        this.maintain(mod.name, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon);
+        this.maintain(mod.name, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor);
     }
 
-    maintain(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon) {
+    maintain(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor) {
         if(value[0]) {
             mod.classList.add('mod-change');
             mod.classList.replace('mod-bg-w-w', 'mod-bg-d-d');
@@ -71,10 +72,10 @@ export default class Mod {
 
         }
 
-        this.active(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon);
+        this.active(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor);
     }
 
-    active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon) {
+    active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor) {
         let boolean = target.classList.contains('mod-change') ? true : false;
 
         value.push(boolean);
@@ -86,6 +87,7 @@ export default class Mod {
             main.classList.replace('bd-w', 'bd-d');
             main.classList.replace('light-w-bg-main', 'light-d-bg-main');
             header.classList.replace('light-w-bg-header', 'light-d-bg-header');
+            header.classList.replace('bd-w', 'bd-d');
 
             for(let i = 0; i < line.length; i++) {
                 line[i].classList.replace('bd-w', 'bd-d');
@@ -101,6 +103,8 @@ export default class Mod {
                 skill_icon[i].classList.add('skill-d');
             }
 
+            infor.classList.replace('light-w-bg-main', 'light-d-bg-main');
+
             target.innerHTML = target.innerHTML.replace(icons[0], icons[1]);
         }else {
             index.classList.remove('d-mod');
@@ -108,6 +112,7 @@ export default class Mod {
             main.classList.replace('bd-d', 'bd-w');
             main.classList.replace('light-d-bg-main', 'light-w-bg-main');
             header.classList.replace('light-d-bg-header', 'light-w-bg-header');
+            header.classList.replace('bd-d', 'bd-w');
 
             for(let i = 0; i < line.length; i++) {
                 line[i].classList.replace('bd-d', 'bd-w');
@@ -122,6 +127,8 @@ export default class Mod {
             for(let i = 0; i < skill_icon.length; i++) {
                 skill_icon[i].classList.remove('skill-d');
             }
+
+            infor.classList.replace('light-d-bg-main', 'light-w-bg-main');
 
             target.innerHTML = target.innerHTML.replace(icons[1], icons[0]);
         }

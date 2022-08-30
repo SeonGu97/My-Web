@@ -2,9 +2,8 @@
 
 import Motto from "./motto.js";
 import Line from "../line.js";
-import Profile from "./profile.js";
-import Infor from "./infor.js";
 import Skill from "./skill.js";
+import Box from "../Box/box.js";
 
 export default class Container {
     constructor(creator, main) {
@@ -12,8 +11,7 @@ export default class Container {
     
         const motto = new Motto(creator, container.name);
         const line1 = new Line(creator, container.name);
-        const profile = new Profile(creator, container.name);
-        const infor = new Infor(creator, container.name);
+        const box = new Box(creator, container.name);
         const line2 = new Line(creator, container.name);
         const skill = new Skill(creator, container.name);
         const line3 = new Line(creator, container.name);

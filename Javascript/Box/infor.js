@@ -2,7 +2,7 @@
 
 export default class Infor {
     constructor(creator, container) {
-        const infor = new creator('infor', 'section', 'class', 'infor', '', 1, container, false, '', '');
+        const infor = new creator('infor', 'section', 'class', 'infor light-w-bg-main', '', 1, container, false, '', '');
     
         const library = new creator('library', 'ul', 'class', 'library', '', 1, infor.name, false, '', '');
 

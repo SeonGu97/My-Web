@@ -73,9 +73,7 @@ html body {
 html body #index {
   display: flex;
   width: 100%;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+  height: 100%;
   justify-content: center;
   position: relative;
 }
@@ -90,12 +88,20 @@ html body #index main {
   border-style: solid;
   flex: none;
   box-sizing: border-box;
+  position: relative;
+  z-index: 0;
 }
 html body #index main header {
   display: flex;
   width: inherit;
   height: calc(4rem - 1px);
   justify-content: space-between;
+  border-width: 0px 0px 1px 0px;
+  border-style: solid;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 30;
 }
 html body #index main header .logo {
   display: flex;
@@ -227,40 +233,71 @@ html body #index main .container .motto .saying {
   font-size: 1rem;
   opacity: 0.75;
 }
-html body #index main .container .profile {
+html body #index main .container .box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+html body #index main .container .box .profile {
   display: flex;
   justify-content: center;
   padding: 3.5rem 0;
+  transform-origin: left;
+  transition: 1s ease-out;
   position: relative;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
-html body #index main .container .profile .picture {
+html body #index main .container .box .profile .picture {
   width: 12.5rem;
   border-radius: 50%;
   position: relative;
-  z-index: 5;
+  z-index: inherit;
   box-sizing: border-box;
   border-width: 5px;
   border-style: solid;
 }
-html body #index main .container .infor {
+html body #index main .container .box .infor {
   display: flex;
   justify-content: center;
   padding-bottom: 3.5rem;
+  transform-origin: left;
+  transition: 1s ease-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
-html body #index main .container .infor .library {
+html body #index main .container .box .infor .library {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
 }
-html body #index main .container .infor .library .book {
+html body #index main .container .box .infor .library .book {
   display: flex;
   list-style: none;
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
   font-weight: bold;
 }
-html body #index main .container .infor .library .book .name {
+html body #index main .container .box .infor .library .book .name {
   color: #aeaeae;
+}
+html body #index main .container .box .intro {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  box-shadow: inset 0.2rem 0.2rem 0.5rem #cfd8dc, inset -0.2rem -0.2rem 0.5rem #eee;
+}
+html body #index main .container .box .box-btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 10;
+}
+html body #index main .container .box .trans-box {
+  transform: rotateY(200deg);
 }
 html body #index main .container .skill {
   display: flex;
@@ -347,7 +384,7 @@ html body .mod {
   box-sizing: border-box;
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
-  z-index: 20;
+  z-index: 45;
 }
 html body .mod i {
   pointer-events: none;
@@ -384,7 +421,7 @@ html body aside {
   border-right: 1px solid;
   position: fixed;
   left: 0;
-  z-index: 15;
+  z-index: 40;
 }
 html body aside .logo {
   display: flex;
@@ -432,7 +469,7 @@ html body .exit {
   position: fixed;
   width: 100%;
   height: 100%;
-  z-index: 10;
+  z-index: 35;
 }
 html body .light-w-bg-exit {
   background: #212121;
