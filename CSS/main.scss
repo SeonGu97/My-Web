@@ -42,6 +42,16 @@ $sky-a: rgba(138, 180, 248, .25);
 
 $lightblue: #e1f5fe;
 
+$shadow: .3rem .3rem .6rem $gray-3, 
+-.2rem -.2rem .5rem #eee;
+$inner-shadow: inset .2rem .2rem .5rem $gray-3, 
+inset -.2rem -.2rem .5rem #eee;
+
+$d-shadow: .3rem .3rem .6rem rgba(0, 0, 0, .75), 
+-.2rem -.2rem .5rem rgba(0, 0, 0, .35);
+$d-inner-shadow: inset .2rem .2rem .5rem rgba(0, 0, 0, .75), 
+inset -.2rem -.2rem .5rem rgba(0, 0, 0, .35);
+
 html {
     @include full-size();
 
@@ -61,6 +71,7 @@ html {
         #index {
             display: flex;
             @include full-size();
+            height: max-content;
             justify-content: center;
             position: relative;
 
@@ -122,7 +133,7 @@ html {
                             position: relative;
                             overflow: hidden;
 
-                            .effect {
+                            .effect {       
                                 width: 17.5rem;
                                 height: 17.5rem;
                                 border-radius: 50%;
@@ -219,54 +230,81 @@ html {
                         @include full-size();
                         position: relative;
 
-                        .profile {
-                            display: flex;
-                            justify-content: center;
-                            padding: $primary-size * 3.5 0;
+                        .front {
+                            transition: 1s ease;
                             transform-origin: left;
-                            transition: 1s ease-out;
+                            backface-visibility: hidden;
                             position: relative;
-                            backface-visibility: hidden;
-        
-                            .picture {
-                                width: $primary-size * 12.5;
-                                border-radius: 50%;
-                                position: relative;
-                                z-index: inherit;
-                                box-sizing: border-box;
-                                border-width: 5px;
-                                border-style: solid;
-                            }
-                        }
-        
-                        .infor {
-                            display: flex;
-                            justify-content: center;
-                            padding-bottom: $primary-size * 3.5;
-                            transform-origin: left;
-                            transition: 1s ease-out;
-                            backface-visibility: hidden;
-    
-                            .library {
+                            z-index: 5;
+
+                            .profile {
                                 display: flex;
-                                flex-direction: column;
-                                row-gap: $primary-size * 2;
-    
-                                .book {
+                                justify-content: center;
+                                padding: $primary-size * 3.5 0;
+                                transform-origin: left;
+                                position: relative;
+                                backface-visibility: hidden;
+            
+                                .picture {
+                                    width: $primary-size * 12.5;
+                                    border-radius: 50%;
+                                    position: relative;
+                                    z-index: inherit;
+                                    box-sizing: border-box;
+                                    border-width: 5px;
+                                    border-style: solid;
+                                }
+                            }
+
+                            .infor {
+                                display: flex;
+                                justify-content: center;
+                                padding-bottom: $primary-size * 3.5;
+                                transform-origin: left;
+                                backface-visibility: hidden;
+        
+                                .library {
                                     display: flex;
-                                    list-style: none;
-                                    column-gap: $primary-size * 1.5;
-                                    font-weight: bold;
-    
-                                    .name {
-                                        color: #aeaeae;
-                                    }
-    
-                                    .value {
-    
+                                    flex-direction: column;
+                                    row-gap: $primary-size * 2;
+        
+                                    .book {
+                                        display: flex;
+                                        list-style: none;
+                                        column-gap: $primary-size * 1.5;
+                                        font-weight: bold;
+        
+                                        .name {
+                                            color: #aeaeae;
+                                        }
+        
+                                        .value {
+                                            
+                                        }
                                     }
                                 }
                             }
+                        }
+
+                        .front-bd {
+                            border-width: 0px 1px 0px 0px;
+                            border-style: solid;
+                        }
+
+                        .back {
+                            @include full-size();
+                            transform-origin: left;
+                            box-sizing: border-box;
+                            transition: transform 1s ease;
+                            position: absolute;
+                            top: 0;
+                            z-index: 0;
+                            border-width: 1px;
+                            border-style: solid;
+                        }
+
+                        .open {
+                            transform: rotateY(200deg);
                         }
 
                         .intro {
@@ -283,11 +321,27 @@ html {
                             top: 50%;
                             right: 0;
                             z-index: 10;
+                            
+                            background: none;
+                            border: none;
+                            color: red;
                         }
+                    }
 
-                        .trans-box {
-                            transform: rotateY(200deg);
-                        }
+                    .inner-shadow {
+                        box-shadow: $inner-shadow;
+                    }
+
+                    .shadow {
+                        box-shadow: $shadow;
+                    }
+
+                    .d-inner-shadow {
+                        box-shadow: $d-inner-shadow;
+                    }
+
+                    .d-shadow {
+                        box-shadow: $d-shadow;
                     }
 
                     .skill {
@@ -427,11 +481,6 @@ html {
             }
         }
 
-        .d-mod {
-            background: $black-3;
-            color: $white-1;
-        }
-
         aside {
             width: $primary-size * 17.5;
             height: 100%;
@@ -532,6 +581,16 @@ html {
             background: $sky;
             border-radius: 0 $primary-size * 1.5 $primary-size * 1.5 0;
         }
+    }
+
+    .d-mod {
+        background: $black-3;
+        color: $white-1;
+    }
+
+    .w-mod {
+        background: $white-1;
+        color: $primary-black;
     }
 }
 

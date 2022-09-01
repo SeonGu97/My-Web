@@ -2,15 +2,22 @@
 
 export default class Box_btn {
     constructor(creator, box) {
-        const box_btn = new creator('box_btn', 'button', 'class', 'box-btn', 'btn', 1, box, true, 'click', () => {
-            const profile = document.querySelector('.profile');
-            const infor = document.querySelector('.infor');
-            const intro = document.querySelector('.intro');
+        const box_btn = new creator('box_btn', 'button', 'class', 'box-btn', '<< 소개', 1, box, true, 'click', () => {
+            const front = document.querySelector('.front');
+            const back = document.querySelector('.back');
+            const box = document.querySelector('.box');
+            const mod = document.querySelector('.mod');
 
-            profile.classList.toggle('trans-box');
-            infor.classList.toggle('trans-box');
-            intro.classList.toggle('inner-shadow');
-            console.log(true)
+            front.classList.toggle('open');
+            back.classList.toggle('open');
+
+            if(mod.classList.contains('mod-change')) {
+                box.classList.replace('inner-shadow', 'd-inner-shadow');
+                back.classList.replace('shadow', 'd-shadow');
+            }else {
+                box.classList.replace('d-inner-shadow', 'inner-shadow');
+                back.classList.replace('d-shadow', 'shadow');
+            }
         });
     }
 }

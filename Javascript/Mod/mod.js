@@ -23,6 +23,10 @@ export default class Mod {
         const picture = document.querySelector('.picture');
         const skill_icon = document.querySelectorAll('.skill-icon > .skill-name');
         const infor = document.querySelector('.infor');
+        const body = document.body;
+        const back = document.querySelector('.back');
+        const box = document.querySelector('.box');
+        const front = document.querySelector('.front');
 
         const icons = ['<i class="fa-solid fa-moon"></i> 다크모드로 보기', '<i class="bi bi-sun-fill"></i> 라이트모드로 보기'];
 
@@ -31,7 +35,7 @@ export default class Mod {
 
             target.classList.toggle('mod-change');
 
-            this.active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor);
+            this.active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front);
 
             this.activeChange(nav, value);
         });
@@ -60,10 +64,10 @@ export default class Mod {
             }
         });
 
-        this.maintain(mod.name, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor);
+        this.maintain(mod.name, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front);
     }
 
-    maintain(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor) {
+    maintain(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front) {
         if(value[0]) {
             mod.classList.add('mod-change');
             mod.classList.replace('mod-bg-w-w', 'mod-bg-d-d');
@@ -72,16 +76,17 @@ export default class Mod {
 
         }
 
-        this.active(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor);
+        this.active(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front);
     }
 
-    active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor) {
+    active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front) {
         let boolean = target.classList.contains('mod-change') ? true : false;
 
         value.push(boolean);
         value.splice(value.indexOf(value[0]), 1);
 
         if(value[0]) {
+            body.classList.add('d-mod');
             index.classList.add('d-mod');
             target.classList.replace('mod-bg-w-d', 'mod-bg-d-w');
             main.classList.replace('bd-w', 'bd-d');
@@ -104,9 +109,14 @@ export default class Mod {
             }
 
             infor.classList.replace('light-w-bg-main', 'light-d-bg-main');
+            back.classList.replace('w-mod', 'd-mod');
+            box.classList.replace('inner-shadow', 'd-inner-shadow');
+            back.classList.replace('shadow', 'd-shadow');
+            back.classList.replace('bd-w', 'bd-d');
 
             target.innerHTML = target.innerHTML.replace(icons[0], icons[1]);
         }else {
+            body.classList.remove('d-mod');
             index.classList.remove('d-mod');
             target.classList.replace('mod-bg-d-w', 'mod-bg-w-d');
             main.classList.replace('bd-d', 'bd-w');
@@ -129,6 +139,10 @@ export default class Mod {
             }
 
             infor.classList.replace('light-d-bg-main', 'light-w-bg-main');
+            back.classList.replace('d-mod', 'w-mod');
+            box.classList.replace('d-inner-shadow', 'inner-shadow');
+            back.classList.replace('d-shadow', 'shadow');
+            back.classList.replace('bd-d', 'bd-w');
 
             target.innerHTML = target.innerHTML.replace(icons[1], icons[0]);
         }
