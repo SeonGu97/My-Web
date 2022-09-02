@@ -231,7 +231,7 @@ html {
                         position: relative;
 
                         .front {
-                            transition: 1s ease;
+                            transition: transform 1s ease;
                             transform-origin: left;
                             backface-visibility: hidden;
                             position: relative;
@@ -279,7 +279,7 @@ html {
                                         }
         
                                         .value {
-                                            
+
                                         }
                                     }
                                 }
@@ -319,12 +319,46 @@ html {
                         .box-btn {
                             position: absolute;
                             top: 50%;
-                            right: 0;
+                            right: $primary-size;
                             z-index: 10;
-                            
                             background: none;
                             border: none;
-                            color: red;
+                            cursor: pointer;
+
+                            i {
+                                transition: transform opacity .5s ease;
+                                font-size: $primary-size * 1.5;
+                                pointer-events: none;
+                            }
+                        }
+
+                        .arrow-active-1 {
+                            transform: translateX(-50%);
+                            opacity: 0;
+                            transition: .5s ease;
+                        }
+
+                        .turn {
+                            transform: translateX(0) rotate(.5turn);
+                        }
+
+                        .arrow-active-2 {
+                            transform: translateX(50%) rotate(.5turn);
+                            opacity: 0;
+                            transition: .5s ease;
+                        }
+
+                        .shadow-box {
+                            @include full-size();
+                            background-color: rgba(0, 0, 0, .025);
+                            position: absolute;
+                            top: 0;
+                            transition: width .5s ease-out;
+                            transition-delay: .1s;
+                        }
+
+                        .gone {
+                            width: 0%;
                         }
                     }
 
