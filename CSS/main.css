@@ -411,6 +411,32 @@ html body #index main .container .skill .skill-name {
 html body #index main .container .skill-d {
   color: #cfd8dc;
 }
+html body #index main .container .project {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 3.5rem;
+  -moz-column-gap: 3.5rem;
+       column-gap: 3.5rem;
+  padding: 3.5rem 1rem;
+}
+html body #index main .container .project .item {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  flex: none;
+}
+html body #index main .container .project .item:hover {
+  transform: scale(0.95);
+  transition: 0.3s ease;
+}
+html body #index main .container .project-w {
+  background: #e0e0e0;
+}
+html body #index main .container .project-d {
+  background: #373737;
+}
 html body #index .line {
   margin: 0;
   border: none;

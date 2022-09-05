@@ -427,6 +427,40 @@ html {
                     .skill-d {
                         color: $gray-3;
                     }
+
+                    .project {
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        row-gap: $primary-size * 3.5;
+                        column-gap: $primary-size * 3.5;
+                        padding: $primary-size * 3.5 $primary-size;
+
+                        .item {
+                            width: $primary-size * 20;
+                            height: $primary-size * 20;
+                            border-radius: $primary-size / 2;
+                            cursor: pointer;
+                            flex: none;
+
+                            &:hover {
+                                transform: scale(.95);
+                                transition: .3s ease;
+                            }
+
+                            .item-img {
+
+                            }
+                        }
+                    }
+
+                    .project-w {
+                        background: $gray-2;
+                    }
+
+                    .project-d {
+                        background: #373737;
+                    }
                 }
             }
 
