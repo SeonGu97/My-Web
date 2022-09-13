@@ -5,6 +5,7 @@ import Line from "../line.js";
 import Skill from "./skill.js";
 import Box from "../Box/box.js";
 import Project from "../Project/project.js";
+import Footer from "../Footer/footer.js";
 
 export default class Container {
     constructor(creator, main) {
@@ -17,5 +18,6 @@ export default class Container {
         const skill = new Skill(creator, container.name);
         const line3 = new Line(creator, container.name);
         const project = new Project(creator, container.name);
+        const footer = new Footer(creator, container.name);
     }
 }
