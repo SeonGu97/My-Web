@@ -474,6 +474,95 @@ html body #index main .container .project-d {
   border: 1px solid #424242;
   background: #212121;
 }
+html body #index main .container footer {
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+html body #index main .container footer .email {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+html body #index main .container footer .email #contact-form {
+  display: flex;
+  flex-direction: column;
+}
+html body #index main .container footer .email #contact-form label {
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+}
+html body #index main .container footer .email #contact-form .user-name {
+  display: flex;
+  width: 150px;
+  align-items: center;
+  height: 1.5rem;
+  border-radius: 1rem;
+  padding-left: 0.5rem;
+  border-width: 1px;
+  border-style: solid;
+}
+html body #index main .container footer .email #contact-form .user-name:focus {
+  outline: 0;
+  border-color: gray;
+}
+html body #index main .container footer .email #contact-form .message {
+  display: flex;
+  width: 300px;
+  height: 7.5rem;
+  align-items: center;
+  border-radius: 0.3333333333rem;
+  padding: 0.5rem;
+  border-width: 1px;
+  border-style: solid;
+  resize: none;
+}
+html body #index main .container footer .email #contact-form .message:focus {
+  outline: 0;
+  border-color: gray;
+}
+html body #index main .container footer .email #contact-form .submit {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  margin: 1rem 0;
+  padding: 0.2rem 0.6666666667rem;
+  border-radius: 1rem;
+  border-width: 1px;
+  border-style: solid;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+html body #index main .container .footer-w {
+  border-width: 1px 0px 0px 0px;
+  border-style: solid;
+  background: linear-gradient(#fafafa, 25%, #e1f5fe);
+  color: #616161;
+}
+html body #index main .container .footer-d {
+  border-width: 1px 0px 0px 0px;
+  border-style: solid;
+  background: linear-gradient(#1b1b1b, 25%, #212121);
+}
+html body #index main .container .label-d {
+  color: #aeaeae;
+}
+html body #index main .container .user-name-d {
+  background: #616161;
+  color: #fff;
+}
+html body #index main .container .message-d {
+  background: #616161;
+  color: #fff;
+}
+html body #index main .container .submit-w {
+  background: #fff;
+}
+html body #index main .container .submit-d {
+  background: #424242;
+  color: #cfd8dc;
+}
 html body #index .line {
   margin: 0;
   border: none;
@@ -710,5 +799,8 @@ html .w-mod {
     font-size: 0.5714285714rem !important;
     top: -2px !important;
     right: 12px !important;
+  }
+  .container footer {
+    padding: 1rem !important;
   }
 }/*# sourceMappingURL=main.css.map */

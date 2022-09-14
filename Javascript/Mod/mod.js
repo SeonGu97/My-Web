@@ -30,6 +30,11 @@ export default class Mod {
         const box_btn = document.querySelector('.box-btn');
         const item = document.querySelectorAll('.item');
         const cover = document.querySelectorAll('.cover');
+        const footer = document.querySelector('footer');
+        const labels = document.querySelectorAll('label');
+        const user_name = document.querySelector('.user-name');
+        const message = document.querySelector('textarea');
+        const submit = document.querySelector('.submit');
 
         const icons = ['<i class="fa-solid fa-moon"></i> 다크모드로 보기', '<i class="bi bi-sun-fill"></i> 라이트모드로 보기'];
 
@@ -38,7 +43,7 @@ export default class Mod {
 
             target.classList.toggle('mod-change');
 
-            this.active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover);
+            this.active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit);
 
             this.activeChange(nav, value);
         });
@@ -67,10 +72,10 @@ export default class Mod {
             }
         });
 
-        this.maintain(mod.name, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover);
+        this.maintain(mod.name, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit);
     }
 
-    maintain(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover) {
+    maintain(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit) {
         if(value[0]) {
             mod.classList.add('mod-change');
             mod.classList.replace('mod-bg-w-w', 'mod-bg-d-d');
@@ -79,10 +84,10 @@ export default class Mod {
 
         }
 
-        this.active(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover);
+        this.active(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit);
     }
 
-    active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover) {
+    active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit) {
         let boolean = target.classList.contains('mod-change') ? true : false;
 
         value.push(boolean);
@@ -124,7 +129,23 @@ export default class Mod {
 
             cover.forEach(element => {
                 element.classList.replace('cover-w', 'cover-d');
-            })
+            });
+
+            footer.classList.replace('footer-w', 'footer-d');
+            footer.classList.replace('bd-w', 'bd-d');
+
+            labels.forEach(element => {
+                element.classList.add('label-d');
+            });
+
+            user_name.classList.add('user-name-d');
+            user_name.classList.replace('bd-w', 'bd-d');
+
+            message.classList.add('message-d');
+            message.classList.replace('bd-w', 'bd-d');
+
+            submit.classList.replace('bd-w', 'bd-d');
+            submit.classList.replace('submit-w', 'submit-d');
 
             target.innerHTML = target.innerHTML.replace(icons[0], icons[1]);
         }else {
@@ -163,7 +184,23 @@ export default class Mod {
 
             cover.forEach(element => {
                 element.classList.replace('cover-d', 'cover-w');
-            })
+            });
+
+            footer.classList.replace('footer-d', 'footer-w');
+            footer.classList.replace('bd-d', 'bd-w');
+
+            labels.forEach(element => {
+                element.classList.remove('label-d');
+            });
+
+            user_name.classList.remove('user-name-d');
+            user_name.classList.replace('bd-d', 'bd-w');
+
+            message.classList.remove('message-d');
+            message.classList.replace('bd-d', 'bd-w');
+
+            submit.classList.replace('bd-d', 'bd-w');
+            submit.classList.replace('submit-d', 'submit-w');
 
             target.innerHTML = target.innerHTML.replace(icons[1], icons[0]);
         }

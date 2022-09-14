@@ -500,6 +500,109 @@ html {
                         border: 1px solid $black-2;
                         background: $black-3;
                     }
+
+                    footer {
+                        width: 100%;
+                        padding: $primary-size * 2;
+                        box-sizing: border-box;
+
+                        .email {
+                            display: flex;
+                            height: 100%;
+                            justify-content: center;
+                            align-items: center;
+
+                            #contact-form {
+                                display: flex;
+                                flex-direction: column;
+
+                                label {
+                                    padding: $primary-size / 2 0;
+                                    font-size: .9rem;
+                                }
+
+                                .user-name {
+                                    display: flex;
+                                    width: 150px;
+                                    align-items: center;
+                                    height: $primary-size * 1.5;
+                                    border-radius: $primary-size;
+                                    padding-left: $primary-size / 2;
+                                    border-width: 1px;
+                                    border-style: solid;
+
+                                    &:focus {
+                                        outline: 0;
+                                        border-color: gray;
+                                    }
+                                }
+
+                                .message {
+                                    display: flex;
+                                    width: 300px;
+                                    height: $primary-size * 7.5;
+                                    align-items: center;
+                                    border-radius: $primary-size / 3;
+                                    padding: $primary-size / 2;
+                                    border-width: 1px;
+                                    border-style: solid;
+                                    resize: none;
+
+                                    &:focus {
+                                        outline: 0;
+                                        border-color: gray;
+                                    }
+                                }
+
+                                .submit {
+                                    width: min-content;
+                                    margin: $primary-size 0;
+                                    padding: $primary-size / 5 $primary-size / 1.5;
+                                    border-radius: $primary-size;
+                                    border-width: 1px;
+                                    border-style: solid;
+                                    cursor: pointer;
+                                    font-size: .9rem;
+                                }
+                            }
+                        }
+                    }
+
+                    .footer-w {
+                        border-width: 1px 0px 0px 0px;
+                        border-style: solid;
+                        background: linear-gradient($white-1, 25%, $lightblue);
+                        color: $black-1;
+                    }
+
+                    .footer-d {
+                        border-width: 1px 0px 0px 0px;
+                        border-style: solid;
+                        background: linear-gradient($black-4, 25%, $black-3);
+                    }
+
+                    .label-d {
+                        color: #aeaeae;
+                    }
+
+                    .user-name-d {
+                        background: $black-1;
+                        color: $primary-white;
+                    }
+
+                    .message-d {
+                        background: $black-1;
+                        color: $primary-white;
+                    }
+
+                    .submit-w {
+                        background: $primary-white;
+                    }
+
+                    .submit-d {
+                        background: $black-2;
+                        color: $gray-3;
+                    }
                 }
             }
 
@@ -807,6 +910,10 @@ html {
                     right: 12px !important;
                 }
             }
+        }
+
+        footer {
+            padding: $primary-size !important;
         }
     }
 }

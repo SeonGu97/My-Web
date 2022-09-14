@@ -15,12 +15,49 @@
     <!-- Javascript -->
     <script defer type="module" src="./index.js"></script>
     <!-- <script defer type="text/javascript" src="./public/bundle.js"></script> -->
+    
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
             // https://dashboard.emailjs.com/admin/account
-            emailjs.init('service_lvvpk94');
+            emailjs.init('84ikr384W5FJXBM1T');
         })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const input = document.querySelectorAll('input');
+                const textarea = document.querySelector('textarea');
+
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                if(confirm('메세지를 전송하시겠습니까?')) {
+                    if(!input[1].value.trim()) {
+                        alert('보내는 이를 입력해주세요.');
+                    }else {
+                        if(!textarea.value.trim()) {
+                            alert('메세지를 입력해주세요.');
+                        }else {
+                            emailjs.sendForm('service_lvvpk94', 'template_reibd4n', this)
+                            .then(function() {
+                                alert('메세지 전송을 완료했습니다.');
+
+                                input[1].value = '';
+                                textarea.value = '';
+                            }, function(error) {
+                                console.log('FAILED...', error);
+                                alert('Error: 메세지 보내기를 실패했습니다 :(');
+                            });
+                        }   
+                    }
+                }else {
+                    alert('메세지 전송을 취소했습니다.');
+                }
+            });
+        }
     </script>
 </head>
 <body>
