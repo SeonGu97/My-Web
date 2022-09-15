@@ -85,6 +85,12 @@ html {
                 box-sizing: border-box;
                 position: relative;
                 z-index: 0;
+                overflow: hidden;
+
+                hr {
+                    position: relative;
+                    z-index: 10;
+                }
 
                 header {
                     display: flex;
@@ -232,7 +238,7 @@ html {
 
                         .front {
                             transition: transform 1s ease;
-                            transform-origin: left;
+                            transform-origin: center;
                             backface-visibility: hidden;
                             position: relative;
                             z-index: 5;
@@ -241,9 +247,10 @@ html {
                                 display: flex;
                                 justify-content: center;
                                 padding: $primary-size * 3.5 0;
-                                transform-origin: left;
+                                transform-origin: center;
                                 position: relative;
                                 backface-visibility: hidden;
+                                z-index: 5;
             
                                 .picture {
                                     width: $primary-size * 12.5;
@@ -260,8 +267,9 @@ html {
                                 display: flex;
                                 justify-content: center;
                                 padding-bottom: $primary-size * 3.5;
-                                transform-origin: left;
+                                transform-origin: center;
                                 backface-visibility: hidden;
+                                z-index: 5;
         
                                 .library {
                                     display: flex;
@@ -293,18 +301,24 @@ html {
 
                         .back {
                             @include full-size();
-                            transform-origin: left;
+                            transform-origin: center;
                             box-sizing: border-box;
                             transition: transform 1s ease;
                             position: absolute;
                             top: 0;
-                            z-index: 0;
-                            border-width: 1px;
                             border-style: solid;
                         }
 
+                        .back-w {
+                            background: #f5f5f5;
+                        }
+
+                        .back-d {
+                            background: $black-3;
+                        }
+
                         .open {
-                            transform: rotateY(200deg);
+                            transform: rotateY(180deg);
                         }
 
                         .intro {
@@ -318,12 +332,14 @@ html {
 
                         .box-btn {
                             position: absolute;
-                            top: 50%;
-                            right: $primary-size;
+                            top: $primary-size;
+                            right: $primary-size / 2;
                             z-index: 10;
                             background: none;
                             border: none;
                             cursor: pointer;
+                            z-index: 15;
+                            opacity: .75;
 
                             i {
                                 transition: transform opacity .5s ease;
@@ -338,10 +354,6 @@ html {
                             transition: .5s ease;
                         }
 
-                        .turn {
-                            transform: translateX(0) rotate(.5turn);
-                        }
-
                         .arrow-active-2 {
                             transform: translateX(50%) rotate(.5turn);
                             opacity: 0;
@@ -354,7 +366,7 @@ html {
                             position: absolute;
                             top: 0;
                             transition: width .5s ease-out;
-                            transition-delay: .1s;
+                            transition-delay: .2s;
                         }
 
                         .gone {

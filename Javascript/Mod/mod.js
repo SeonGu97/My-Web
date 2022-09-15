@@ -118,6 +118,7 @@ export default class Mod {
 
             infor.classList.replace('light-w-bg-main', 'light-d-bg-main');
             back.classList.replace('w-mod', 'd-mod');
+            back.classList.replace('back-w', 'back-d');
             box.classList.replace('inner-shadow', 'd-inner-shadow');
             back.classList.replace('shadow', 'd-shadow');
             back.classList.replace('bd-w', 'bd-d');
@@ -173,6 +174,7 @@ export default class Mod {
 
             infor.classList.replace('light-d-bg-main', 'light-w-bg-main');
             back.classList.replace('d-mod', 'w-mod');
+            back.classList.replace('back-d', 'back-w');
             box.classList.replace('d-inner-shadow', 'inner-shadow');
             back.classList.replace('d-shadow', 'shadow');
             back.classList.replace('bd-d', 'bd-w');
