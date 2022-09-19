@@ -188,6 +188,12 @@ html {
                     background: $black-3;
                 }
 
+                .title {
+                    padding-top: $primary-size * 3.5;
+                    padding-left: $primary-size * 3.5;
+                    font-weight: bold;
+                }
+
                 .container {
 
                     .motto {
@@ -517,6 +523,11 @@ html {
                         width: 100%;
                         padding: $primary-size * 2;
                         box-sizing: border-box;
+
+                        .title {
+                            padding-top: $primary-size * 1.5;
+                            padding-bottom: $primary-size * 3.5;
+                        }
 
                         .email {
                             display: flex;

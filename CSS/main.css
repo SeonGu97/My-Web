@@ -203,6 +203,11 @@ html body #index main .light-w-bg-header {
 html body #index main .light-d-bg-header {
   background: #212121;
 }
+html body #index main .title {
+  padding-top: 3.5rem;
+  padding-left: 3.5rem;
+  font-weight: bold;
+}
 html body #index main .container .motto {
   display: flex;
   width: 100%;
@@ -488,6 +493,10 @@ html body #index main .container footer {
   width: 100%;
   padding: 2rem;
   box-sizing: border-box;
+}
+html body #index main .container footer .title {
+  padding-top: 1.5rem;
+  padding-bottom: 3.5rem;
 }
 html body #index main .container footer .email {
   display: flex;

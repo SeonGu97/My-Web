@@ -6,6 +6,7 @@ import Skill from "./skill.js";
 import Box from "../Box/box.js";
 import Project from "../Project/project.js";
 import Footer from "../Footer/footer.js";
+import Title from "./title.js";
 
 export default class Container {
     constructor(creator, main) {
@@ -17,6 +18,7 @@ export default class Container {
         const line2 = new Line(creator, container.name);
         const skill = new Skill(creator, container.name);
         const line3 = new Line(creator, container.name);
+        const title = new Title(creator, container.name, `<i class="bi bi-dot"></i> 프로젝트`);
         const project = new Project(creator, container.name);
         const footer = new Footer(creator, container.name);
     }
