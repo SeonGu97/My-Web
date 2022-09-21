@@ -7,7 +7,7 @@ import Shadow_box from "./shadow-box.js";
 
 export default class Box {
     constructor(creator, container) {
-        const box = new creator('box', 'div', 'class', 'box inner-shadow', '', 1, container, false, '', '');
+        const box = new creator('box', 'div', 'class', 'box location-2 inner-shadow', '', 1, container, false, '', '');
         
         const front = new Front(creator, box.name);
         const back = new Back(creator, box.name);

@@ -23,8 +23,6 @@ export default class Main {
                 }
 
                 const effect = document.createElement('div');
-                
-                console.log(value[0])
 
                 if(value[0]) {
                     effect.setAttribute('class', 'effect effect-d');
@@ -39,8 +37,6 @@ export default class Main {
                 let target = e.target;
 
                 const {offsetX , offsetY} = e;
-
-                console.log(offsetX, offsetY)
 
                 effect.style.setProperty('--top',`${offsetY}px`);
                 effect.style.setProperty('--left',`${offsetX}px`);  
