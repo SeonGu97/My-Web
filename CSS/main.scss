@@ -17,10 +17,6 @@
     box-sizing: border-box;
 }
 
-@mixin scroll {
-    scroll-margin: 3.5rem;
-}
-
 $primary-size: 1rem;
 
 $primary-white: #fff;
@@ -58,6 +54,7 @@ inset -.2rem -.2rem .5rem rgba(0, 0, 0, .35);
 
 html {
     @include full-size();
+    scroll-behavior: smooth;
 
     body {
         @include full-size();
@@ -104,7 +101,6 @@ html {
                     position: sticky;
                     top: 0;
                     z-index: 30;
-                    scroll-margin: 11.5rem;
 
                     .logo {
                         display: flex;
@@ -198,6 +194,7 @@ html {
                 }
 
                 .container {
+                    scroll-margin: 4rem;
 
                     .motto {
                         display: flex;
@@ -244,7 +241,7 @@ html {
                     .box {
                         @include full-size();
                         position: relative;
-                        @include scroll();
+                        scroll-margin: 4rem;
 
                         .front {
                             transition: transform 1s ease;
@@ -408,7 +405,7 @@ html {
                         font-size: $primary-size * 3;
                         padding: $primary-size * 2.5 0;
                         column-gap: $primary-size * 2.5;
-                        @include scroll();
+                        scroll-margin: 4rem;
 
                         .skill-icon {
                             display: flex;
@@ -460,7 +457,7 @@ html {
                         row-gap: $primary-size * 3.5;
                         column-gap: $primary-size * 3.5;
                         padding: $primary-size * 3.5 $primary-size;
-                        scroll-margin: 6.5rem;
+                        scroll-margin: 8.5rem;
 
                         .item {
                             width: $primary-size * 20;

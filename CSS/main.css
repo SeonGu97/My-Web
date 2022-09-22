@@ -59,6 +59,7 @@ html {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  scroll-behavior: smooth;
 }
 html body {
   width: 100%;
@@ -112,7 +113,6 @@ html body #index main header {
   position: sticky;
   top: 0;
   z-index: 30;
-  scroll-margin: 11.5rem;
 }
 html body #index main header .logo {
   display: flex;
@@ -211,6 +211,9 @@ html body #index main .title {
   padding-left: 3.5rem;
   font-weight: bold;
 }
+html body #index main .container {
+  scroll-margin: 4rem;
+}
 html body #index main .container .motto {
   display: flex;
   width: 100%;
@@ -255,7 +258,7 @@ html body #index main .container .box {
   height: -moz-max-content;
   height: max-content;
   position: relative;
-  scroll-margin: 3.5rem;
+  scroll-margin: 4rem;
 }
 html body #index main .container .box .front {
   transition: transform 1s ease;
@@ -405,7 +408,7 @@ html body #index main .container .skill {
   padding: 2.5rem 0;
   -moz-column-gap: 2.5rem;
        column-gap: 2.5rem;
-  scroll-margin: 3.5rem;
+  scroll-margin: 4rem;
 }
 html body #index main .container .skill .skill-icon {
   display: flex;
@@ -449,7 +452,7 @@ html body #index main .container .project {
   -moz-column-gap: 3.5rem;
        column-gap: 3.5rem;
   padding: 3.5rem 1rem;
-  scroll-margin: 6.5rem;
+  scroll-margin: 8.5rem;
 }
 html body #index main .container .project .item {
   width: 20rem;

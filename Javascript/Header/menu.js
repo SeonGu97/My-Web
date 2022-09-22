@@ -5,9 +5,9 @@ export default class Menu {
         const menu = new creator('menu', 'div', 'class', 'menu', '', 5, nav, true, 'click', e => {
             const target = e.target;
             let index = target.index + 1;
-            console.log(index)
+            let element = document.querySelector(`.location-${index}`);
 
-            let location = document.querySelector(`.location-${index}`).scrollIntoView();
+            element.scrollIntoView({behavior: 'smooth'});
         });
         
         const menus = document.querySelectorAll('.menu');

@@ -10,7 +10,7 @@ import Title from "./title.js";
 
 export default class Container {
     constructor(creator, main) {
-        const container = new creator('container', 'div', 'class', 'container', '', 1, main, false, '', '');    
+        const container = new creator('container', 'div', 'class', 'container location-1', '', 1, main, false, '', '');    
     
         const motto = new Motto(creator, container.name);
         const line1 = new Line(creator, container.name);
