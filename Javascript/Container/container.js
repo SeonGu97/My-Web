@@ -18,7 +18,7 @@ export default class Container {
         const line2 = new Line(creator, container.name);
         const skill = new Skill(creator, container.name);
         const line3 = new Line(creator, container.name);
-        const title = new Title(creator, container.name, `<i class="bi bi-dot"></i> 프로젝트`);
+        const title = new Title(creator, container.name, `<i class="bi bi-dot"></i> Project`);
         const project = new Project(creator, container.name);
         const footer = new Footer(creator, container.name);
     }

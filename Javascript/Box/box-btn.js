@@ -21,5 +21,5 @@ export default class Box_btn {
                 back.classList.replace('d-shadow', 'shadow');
             }
         });
-    }
+    }   
 }
