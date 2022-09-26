@@ -492,6 +492,8 @@ html body #index main .container .project .item .cover {
   pointer-events: none;
   border-radius: 0.5rem 0.5rem 0 0;
   transition: 0.25s ease;
+  position: relative;
+  z-index: 15;
 }
 html body #index main .container .project .item .slide-down {
   transform: translateY(0);
@@ -517,6 +519,11 @@ html body #index main .container .project .item .mark {
   right: 1rem;
   bottom: 1rem;
   border-radius: 0.3333333333rem;
+  z-index: 20;
+}
+html body #index main .container .project .item .item-img {
+  position: absolute;
+  top: 0;
 }
 html body #index main .container .project-w {
   border: 1px solid #cfd8dc;

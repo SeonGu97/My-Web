@@ -502,6 +502,8 @@ html {
                                 pointer-events: none;
                                 border-radius: $primary-size / 2 $primary-size / 2 0 0;
                                 transition: .25s ease;
+                                position: relative;
+                                z-index: 15;
                             }
 
                             .slide-down {
@@ -532,6 +534,12 @@ html {
                                 right: $primary-size;
                                 bottom: $primary-size;
                                 border-radius: $primary-size / 3;
+                                z-index: 20;
+                            }
+
+                            .item-img {
+                                position: absolute;
+                                top: 0;
                             }
                         }
                     }
