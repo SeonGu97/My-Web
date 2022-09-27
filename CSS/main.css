@@ -525,6 +525,13 @@ html body #index main .container .project .item .item-img {
   position: absolute;
   top: 0;
 }
+html body #index main .container .project .item .item-title {
+  position: absolute;
+  z-index: 25;
+  left: 0.5rem;
+  bottom: 0.5rem;
+  font-size: bold;
+}
 html body #index main .container .project-w {
   border: 1px solid #cfd8dc;
   background: #fff;
