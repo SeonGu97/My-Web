@@ -522,8 +522,11 @@ html body #index main .container .project .item .mark {
   z-index: 20;
 }
 html body #index main .container .project .item .item-img {
+  width: 320px;
+  height: 320px;
   position: absolute;
-  top: 0;
+  top: 0px;
+  left: 0px;
 }
 html body #index main .container .project .item .item-title {
   position: absolute;

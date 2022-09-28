@@ -538,8 +538,11 @@ html {
                             }
 
                             .item-img {
+                                width: 320px;
+                                height: 320px;
                                 position: absolute;
-                                top: 0;
+                                top: 0px;
+                                left: 0px;
                             }
 
                             .item-title {

@@ -18,10 +18,10 @@ export default class Item {
         });
 
         const href = [
-            'https://seongu97.github.io/study/%ED%88%AC%EB%91%90%EB%A6%AC%EC%8A%A4%ED%8A%B82/index.html',
-            'https://seongu97.github.io/study/%EA%B2%8C%EC%8B%9C%ED%8C%90-1/index.html',
-            'https://seongu97.github.io/study/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/index.html',
-            'https://seongu97.github.io/study/%ED%92%80%ED%8E%98%EC%9D%B4%EC%A7%80/index.html'
+            'https://seongu97.github.io/study/%ED%88%AC%EB%91%90%EB%A6%AC%EC%8A%A4%ED%8A%B82/',
+            'https://seongu97.github.io/study/%EA%B2%8C%EC%8B%9C%ED%8C%90-1/',
+            'https://seongu97.github.io/study/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/',
+            'https://seongu97.github.io/study/%ED%92%80%ED%8E%98%EC%9D%B4%EC%A7%80/'
         ];
 
         const items_img = document.querySelectorAll('.item-img');
@@ -33,10 +33,6 @@ export default class Item {
             '',
             '',
         ];
-
-        items.forEach(element => {
-            const item_img = new Item_img(creator, element);
-        });
 
         items.forEach(element => {
             const item_title = new Item_title(creator, element);
