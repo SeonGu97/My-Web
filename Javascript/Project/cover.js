@@ -1,5 +1,7 @@
 'use strict';
 
+import Description from "./description.js";
+
 export default class Cover {
     constructor(creator, project) {
         project.childNodes.forEach(element => {
@@ -18,6 +20,8 @@ export default class Cover {
 
                 target.children[0].classList.replace('slide-down', 'slide-up');
             }, false);
+
+            const description = new Description(creator, cover.name);
         })
     }
 }

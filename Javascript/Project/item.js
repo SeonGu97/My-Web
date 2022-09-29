@@ -21,7 +21,9 @@ export default class Item {
             'https://seongu97.github.io/study/%ED%88%AC%EB%91%90%EB%A6%AC%EC%8A%A4%ED%8A%B82/',
             'https://seongu97.github.io/study/%EA%B2%8C%EC%8B%9C%ED%8C%90-1/',
             'https://seongu97.github.io/study/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/',
-            'https://seongu97.github.io/study/%ED%92%80%ED%8E%98%EC%9D%B4%EC%A7%80/'
+            'https://seongu97.github.io/study/%ED%92%80%ED%8E%98%EC%9D%B4%EC%A7%80/',
+            'https://seongu97.github.io/canvas/',
+            'https://seongu97.github.io/study/%EB%A1%9C%EA%B7%B8%EC%9D%B8/'
         ];
 
         const items_img = document.querySelectorAll('.item-img');
@@ -30,16 +32,16 @@ export default class Item {
             '/Img/item2.png',
             '/Img/item3.png',
             '/Img/item4.png',
-            '',
-            '',
+            '/Img/item5.png',
+            '/Img/item6.png',
         ];
 
         items.forEach(element => {
             const item_title = new Item_title(creator, element);
         });
 
-        const item_title = document.querySelectorAll('.item-title')
-        const title = ['투두리스트', '게시판', '이미지 슬라이더', '풀페이지'];
+        const item_title = document.querySelectorAll('.item-title');
+        const title = ['투두리스트', '게시판', '이미지 슬라이더', '풀페이지', '공 튕기기', '로그인 레이아웃'];
 
         for(let i = 0; i < items.length; i++) {
             items[i].setAttribute('href', href[i]);
