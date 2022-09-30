@@ -481,6 +481,7 @@ html body #index main .container .project .item {
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
+  text-decoration: none;
 }
 html body #index main .container .project .item:hover {
   transform: scale(0.95);
@@ -495,6 +496,12 @@ html body #index main .container .project .item .cover {
   position: relative;
   z-index: 15;
 }
+html body #index main .container .project .item .cover .description {
+  color: #fff;
+  padding: 1rem;
+  white-space: pre-wrap;
+  font-size: 0.75rem;
+}
 html body #index main .container .project .item .slide-down {
   transform: translateY(0);
 }
@@ -505,7 +512,7 @@ html body #index main .container .project .item .cover-w {
   background: rgba(0, 0, 0, 0.85);
 }
 html body #index main .container .project .item .cover-d {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.9);
 }
 html body #index main .container .project .item .mark {
   display: flex;
