@@ -36,15 +36,16 @@ export default class Mod {
         const message = document.querySelector('textarea');
         const submit = document.querySelector('.submit');
         const item_title = document.querySelectorAll('.item-title');
+        const up = document.querySelector('.up');
 
         const icons = ['<i class="fa-solid fa-moon"></i> 다크모드로 보기', '<i class="bi bi-sun-fill"></i> 라이트모드로 보기'];
 
-        const mod = new creator('mod', 'div', 'class', 'mod mod-bg-w-w', `${icons[0]}`, 1, _index, true, 'click', e => {
+        const mod = new creator('mod', 'div', 'class', 'mod mod-bg-w-w bd-w', `${icons[0]}`, 1, _index, true, 'click', e => {
             let target = e.target;
 
             target.classList.toggle('mod-change');
 
-            this.active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title);
+            this.active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title, up);
 
             this.activeChange(nav, value);
         });
@@ -73,10 +74,10 @@ export default class Mod {
             }
         });
 
-        this.maintain(mod.name, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title);
+        this.maintain(mod.name, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title, up);
     }
 
-    maintain(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title) {
+    maintain(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title, up) {
         if(value[0]) {
             mod.classList.add('mod-change');
             mod.classList.replace('mod-bg-w-w', 'mod-bg-d-d');
@@ -85,10 +86,10 @@ export default class Mod {
 
         }
 
-        this.active(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title);
+        this.active(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title, up);
     }
 
-    active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title) {
+    active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title, up) {
         let boolean = target.classList.contains('mod-change') ? true : false;
 
         value.push(boolean);
@@ -98,6 +99,7 @@ export default class Mod {
             body.classList.add('d-mod');
             index.classList.add('d-mod');
             target.classList.replace('mod-bg-w-d', 'mod-bg-d-w');
+            target.classList.replace('bd-w', 'bd-d');
             main.classList.replace('bd-w', 'bd-d');
             main.classList.replace('light-w-bg-main', 'light-d-bg-main');
             header.classList.replace('light-w-bg-header', 'light-d-bg-header');
@@ -151,13 +153,17 @@ export default class Mod {
             
             item_title.forEach(element => {
                 element.classList.replace('active-w', 'active-d');
-            })
+            });
+
+            up.classList.replace('mod-bg-w-w', 'mod-bg-d-d');
+            up.classList.replace('bd-w', 'bd-d');
 
             target.innerHTML = target.innerHTML.replace(icons[0], icons[1]);
         }else {
             body.classList.remove('d-mod');
             index.classList.remove('d-mod');
             target.classList.replace('mod-bg-d-w', 'mod-bg-w-d');
+            target.classList.replace('bd-d', 'bd-w');
             main.classList.replace('bd-d', 'bd-w');
             main.classList.replace('light-d-bg-main', 'light-w-bg-main');
             header.classList.replace('light-d-bg-header', 'light-w-bg-header');
@@ -211,7 +217,10 @@ export default class Mod {
 
             item_title.forEach(element => {
                 element.classList.replace('active-d', 'active-w');
-            })
+            });
+
+            up.classList.replace('mod-bg-d-d', 'mod-bg-w-w');
+            up.classList.replace('bd-d', 'bd-w');
 
             target.innerHTML = target.innerHTML.replace(icons[1], icons[0]);
         }

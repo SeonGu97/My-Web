@@ -687,6 +687,8 @@ html body .mod {
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
   z-index: 45;
+  border-width: 1px;
+  border-style: solid;
 }
 html body .mod i {
   pointer-events: none;
@@ -769,6 +771,7 @@ html body .exit {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  height: 100%;
   z-index: 35;
 }
 html body .light-w-bg-exit {
@@ -802,6 +805,24 @@ html body .active-bg-d {
   color: #1b1b1b;
   background: #8ab4f8;
   border-radius: 0 1.5rem 1.5rem 0;
+}
+html body .up {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  right: 2rem;
+  bottom: 5.5rem;
+  z-index: 40;
+  color: inherit;
+  border-width: 1px;
+  border-style: solid;
+}
+html body .up i {
+  pointer-events: none;
 }
 html .d-mod {
   background: #212121;

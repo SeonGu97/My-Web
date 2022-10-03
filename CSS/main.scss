@@ -737,6 +737,8 @@ html {
             box-sizing: border-box;
             column-gap: $primary-size / 2;
             z-index: 45;
+            border-width: 1px;
+            border-style: solid;
 
             i {
                 pointer-events: none;
@@ -826,6 +828,7 @@ html {
             display: none;
             position: fixed;
             @include full-size();
+            height: 100%;
             z-index: 35;
         }
 
@@ -868,6 +871,26 @@ html {
             color: $black-4;
             background: $sky;
             border-radius: 0 $primary-size * 1.5 $primary-size * 1.5 0;
+        }
+
+        .up {
+            width: $primary-size * 2.5;
+            height: $primary-size * 2.5;
+            font-size: $primary-size * 1.25;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            position: fixed;
+            right: $primary-size * 2;
+            bottom: $primary-size * 5.5;
+            z-index: 40;
+            color: inherit;
+            border-width: 1px;
+            border-style: solid;
+
+            i {
+                pointer-events: none;
+            }
         }
     }
 

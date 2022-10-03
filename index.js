@@ -6,6 +6,7 @@ import Aside from "./Javascript/Aside/aside.js";
 import Mod from "./Javascript/Mod/mod.js";
 import Exit from "./Javascript/Aside/exit.js";
 import Resize from "./Javascript/resize.js";
+import Up from "./Javascript/Up/up.js";
 
 export default class Index {
     constructor(creator) {
@@ -16,6 +17,8 @@ export default class Index {
         const aside = new Aside(creator, index.name);
 
         const exit = new Exit(creator, index.name);
+
+        const up = new Up(creator, index.name);
 
         const mod = new Mod(creator, index.name);
 
