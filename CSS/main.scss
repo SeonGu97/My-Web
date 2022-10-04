@@ -91,10 +91,9 @@ html {
             main {
                 max-width: 1000px;
                 @include full-size();
-                border-width: 0px 1px 0px 1px;
+                border-width: 0px 1px 1px 1px;
                 border-style: solid;
                 flex: none;
-                box-sizing: border-box;
                 position: relative;
                 z-index: 0;
 
@@ -681,6 +680,44 @@ html {
                         background: $black-2;
                         color: $gray-3;
                     }
+
+                    .wastebasket {
+                        display: flex;
+                        height: $primary-size * 9;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        font-size: $primary-size  * 3.5;
+                        color: #b0bec5;
+                        background: $black-3;
+                        position: relative;
+
+                        &::before {
+                            content: '';
+                            width: 100%;
+                            height: 0;
+                            background: #ba000d;
+                            transition: .2s ease;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            z-index: 0;
+                        }
+
+                        &:hover::before {
+                            height: 100%;
+                        }
+
+                        &:hover i {
+                            color: #fff;
+                        }
+
+                        i {
+                            position: relative;
+                            z-index: 5;
+                            color: #cfd8dc;
+                        }
+                    }
                 }
             }
 
@@ -902,6 +939,64 @@ html {
     .w-mod {
         background: $white-1;
         color: $primary-black;
+    }
+
+    .modal {
+        width: 350px;
+        height: 500px;
+        border-radius: $primary-size / 4;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-width: 1px;
+        border-style: solid;
+        z-index: 50;
+
+        .modal-exit-btn {
+            width: $primary-size * 1.75;
+            height: $primary-size * 1.75;
+            position: absolute;
+            right: 0;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-size: $primary-size * 1.15;
+            font-weight: bold;
+            padding: 0;
+            text-align: center;
+            padding-top: 4px;
+        }
+
+        .modal-exit-btn-d {
+            color: $gray-3;
+        }
+    }
+
+    .modal-s {
+        display: block;
+    }
+
+    .modal-h {
+        display: none;
+    }
+
+    .modal-w {
+        background: $white-1;
+    }
+
+    .modal-d {
+        background: $black-3;
+    }
+
+
+
+    .modal-bg {
+        width: 100%;
+        height: 100%;
+        background:rgba(0, 0, 0, .5);
+        position: fixed;
+        z-index: 45;
     }
 }
 

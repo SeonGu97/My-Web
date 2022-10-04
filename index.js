@@ -7,6 +7,8 @@ import Mod from "./Javascript/Mod/mod.js";
 import Exit from "./Javascript/Aside/exit.js";
 import Resize from "./Javascript/resize.js";
 import Up from "./Javascript/Up/up.js";
+import Modal from "./Javascript/Modal/modal.js";
+import Modal_bg from "./Javascript/Modal/modal_bg.js";
 
 export default class Index {
     constructor(creator) {
@@ -20,9 +22,13 @@ export default class Index {
 
         const up = new Up(creator, index.name);
 
-        const mod = new Mod(creator, index.name);
-
         const resize = Resize;
+
+        const modal_bg = new Modal_bg(creator, index.name);
+
+        const modal = new Modal(creator, index.name);
+
+        const mod = new Mod(creator, index.name);
 
         const nav = document.querySelectorAll('nav');
 

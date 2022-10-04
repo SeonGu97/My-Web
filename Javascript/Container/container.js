@@ -7,6 +7,7 @@ import Box from "../Box/box.js";
 import Project from "../Project/project.js";
 import Footer from "../Footer/footer.js";
 import Title from "./title.js";
+import Wastebasket from "../Wastebasket/wastebasket.js";
 
 export default class Container {
     constructor(creator, main) {
@@ -20,6 +21,8 @@ export default class Container {
         const line3 = new Line(creator, container.name);
         const title = new Title(creator, container.name, `<i class="bi bi-dot"></i> Project`);
         const project = new Project(creator, container.name);
+        const line4 = new Line(creator, container.name);
+        const wastebasket = new Wastebasket(creator, container.name);
         const footer = new Footer(creator, container.name);
     }
 }

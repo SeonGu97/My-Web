@@ -28,12 +28,12 @@ export default class Item {
 
         const items_img = document.querySelectorAll('.item-img');
         const img = [
-            '/Img/item1.png',
-            '/Img/item2.png',
-            '/Img/item3.png',
-            '/Img/item4.png',
-            '/Img/item5.png',
-            '/Img/item6.png',
+            'Img/item1.png',
+            'Img/item2.png',
+            'Img/item3.png',
+            'Img/item4.png',
+            'Img/item5.png',
+            'Img/item6.png',
         ];
 
         items.forEach(element => {
