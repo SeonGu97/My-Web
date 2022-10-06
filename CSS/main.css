@@ -105,6 +105,7 @@ html body #index main {
   flex: none;
   position: relative;
   z-index: 0;
+  box-sizing: border-box;
 }
 html body #index main hr {
   position: relative;
@@ -221,6 +222,7 @@ html body #index main .title {
 }
 html body #index main .container {
   scroll-margin: 4rem;
+  perspective: 100%;
 }
 html body #index main .container .motto {
   display: flex;
@@ -644,36 +646,40 @@ html body #index main .container .submit-d {
 }
 html body #index main .container .wastebasket {
   display: flex;
-  height: 9rem;
+  width: 100%;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   font-size: 3.5rem;
   color: #b0bec5;
-  background: #212121;
   position: relative;
+  transform-style: preserve-3d;
+  transition: 0.4s ease;
+  z-index: 30;
 }
 html body #index main .container .wastebasket::before {
   content: "";
   width: 100%;
-  height: 0;
-  background: #ba000d;
-  transition: 0.2s ease;
+  height: 9rem;
+  background: #212121;
+  transform: translateZ(50px);
+}
+html body #index main .container .wastebasket::after {
+  content: "";
+  width: 100%;
+  height: 9rem;
+  background: #424242;
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
+  transform: rotateX(90deg) translateZ(72px);
 }
-html body #index main .container .wastebasket:hover::before {
-  height: 100%;
-}
-html body #index main .container .wastebasket:hover i {
-  color: #fff;
+html body #index main .container .wastebasket:hover {
+  transform: rotateX(-90deg);
 }
 html body #index main .container .wastebasket i {
   position: relative;
   z-index: 5;
-  color: #cfd8dc;
+  color: #000;
 }
 html body #index .line {
   margin: 0;
@@ -868,30 +874,57 @@ html .modal {
   width: 350px;
   height: 500px;
   border-radius: 0.25rem;
+  padding-top: 2rem;
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  border-width: 1px;
-  border-style: solid;
   z-index: 50;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
 }
 html .modal .modal-exit-btn {
   width: 1.75rem;
   height: 1.75rem;
   position: absolute;
+  top: 0;
   right: 0;
   cursor: pointer;
   border: none;
   background: transparent;
   font-size: 1.15rem;
   font-weight: bold;
-  padding: 0;
+  padding: 5px;
   text-align: center;
-  padding-top: 4px;
 }
 html .modal .modal-exit-btn-d {
   color: #cfd8dc;
+}
+html .modal .modal-project {
+  display: flex;
+  width: 100%;
+  height: 4rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-width: 1px 0px;
+  border-style: solid;
+}
+html .modal .modal-project:hover {
+  background: rgba(150, 150, 150, 0.1);
+  transform: scale(1.05, 1.05);
+}
+html .modal .modal-project .modal-mark {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+}
+html .modal .modal-project .modal-title {
+  font-weight: bold;
 }
 html .modal-s {
   display: block;

@@ -2,7 +2,7 @@
 
 export default class Wastebasket {
     constructor(creator, container) {
-        const wastebasket = new creator('wastebasket', 'div', 'class', 'wastebasket', '<i class="bi bi-trash-fill"></i>', 1, container, true, 'click', e => {
+        const wastebasket = new creator('wastebasket', 'section', 'class', 'wastebasket', '', 1, container, true, 'click', e => {
             const modal = document.querySelector('.modal');
             const modal_bg = document.querySelector('.modal-bg');
             
