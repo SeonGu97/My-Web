@@ -648,15 +648,11 @@ html {
                     }
 
                     .footer-w {
-                        border-width: 1px 0px 0px 0px;
-                        border-style: solid;
                         background: linear-gradient($white-1, 25%, $lightblue);
                         color: $black-1;
                     }
 
                     .footer-d {
-                        border-width: 1px 0px 0px 0px;
-                        border-style: solid;
                         background: linear-gradient($black-4, 25%, $black-3);
                     }
 
@@ -694,25 +690,29 @@ html {
                         color: #b0bec5;
                         position: relative;
                         transform-style: preserve-3d;
-                        transition: .4s ease;
+                        transition: .45s ease;
                         z-index: 30;
+                        box-sizing: border-box;
 
-                        &::before {
-                            content: 'Trash Project';
+                        .f-side {
+                            display: flex;
                             width: 100%;
                             height: $primary-size * 9;
-                            background: $black-2;
+                            justify-content: center;
+                            align-items: center;
                             transform: translateZ(50px);
+                            border-width: 1px 0px 1px 0px;
+                            border-style: solid;
                         }
 
-                        &::after {
-                            content: '';
+                        .u-side {
                             width: 100%;
                             height: $primary-size * 9;
-                            background: $black-2\3;
                             position: absolute;
                             transform: rotateX(90deg) translateZ(72px);
-                        }   
+                            border-width: 1px 0px 1px 0px;
+                            border-style: solid;
+                        }
 
                         &:hover {
                             transform: rotateX(-90deg);
@@ -723,6 +723,30 @@ html {
                             z-index: 5;
                             color: #000;
                         }
+                    }
+
+                    .f-side-w {
+                        background: rgba(245, 245, 245);
+
+                        i {
+                            color: $black-2;
+                        }
+                    }
+
+                    .f-side-d {
+                        background: rgba(30, 30, 30);
+
+                        i {
+                            color: #b0bec5;
+                        }
+                    }
+
+                    .u-side-w {
+                        background: rgba(240, 240, 240);
+                    }
+
+                    .u-side-d {
+                        background: rgba(25, 25, 25);
                     }
                 }
             }

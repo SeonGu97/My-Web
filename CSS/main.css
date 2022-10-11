@@ -616,14 +616,10 @@ html body #index main .container footer .email #contact-form .submit {
   font-size: 0.9rem;
 }
 html body #index main .container .footer-w {
-  border-width: 1px 0px 0px 0px;
-  border-style: solid;
   background: linear-gradient(#fafafa, 25%, #e1f5fe);
   color: #616161;
 }
 html body #index main .container .footer-d {
-  border-width: 1px 0px 0px 0px;
-  border-style: solid;
   background: linear-gradient(#1b1b1b, 25%, #212121);
 }
 html body #index main .container .label-d {
@@ -655,23 +651,27 @@ html body #index main .container .wastebasket {
   color: #b0bec5;
   position: relative;
   transform-style: preserve-3d;
-  transition: 0.4s ease;
+  transition: 0.45s ease;
   z-index: 30;
+  box-sizing: border-box;
 }
-html body #index main .container .wastebasket::before {
-  content: "";
+html body #index main .container .wastebasket .f-side {
+  display: flex;
   width: 100%;
   height: 9rem;
-  background: #212121;
+  justify-content: center;
+  align-items: center;
   transform: translateZ(50px);
+  border-width: 1px 0px 1px 0px;
+  border-style: solid;
 }
-html body #index main .container .wastebasket::after {
-  content: "";
+html body #index main .container .wastebasket .u-side {
   width: 100%;
   height: 9rem;
-  background: #424242;
   position: absolute;
   transform: rotateX(90deg) translateZ(72px);
+  border-width: 1px 0px 1px 0px;
+  border-style: solid;
 }
 html body #index main .container .wastebasket:hover {
   transform: rotateX(-90deg);
@@ -680,6 +680,24 @@ html body #index main .container .wastebasket i {
   position: relative;
   z-index: 5;
   color: #000;
+}
+html body #index main .container .f-side-w {
+  background: rgb(245, 245, 245);
+}
+html body #index main .container .f-side-w i {
+  color: #424242;
+}
+html body #index main .container .f-side-d {
+  background: rgb(30, 30, 30);
+}
+html body #index main .container .f-side-d i {
+  color: #b0bec5;
+}
+html body #index main .container .u-side-w {
+  background: rgb(240, 240, 240);
+}
+html body #index main .container .u-side-d {
+  background: rgb(25, 25, 25);
 }
 html body #index .line {
   margin: 0;

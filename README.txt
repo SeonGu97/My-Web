@@ -294,3 +294,10 @@ wastebasket는 hover를 하면 애니메이션이 나오게 만들긴 했는데,
 오늘 알게된 속성은 perspective, transform-style, translateZ이다. 
 perspective는 비유하자면 카메라를 가까이하거나 멀리하거나 하는 느낌이고 transform-style은 3d 옵션을 넣을수 있고, translateZ는
 z축을 기준으로 엘리먼트를 움직이는 기능이다. 내일은 마무리를 짓고 modal-project에 링크를 달면 될 것같다.
+
+(22/10/11/화)
+- wastebasket 애니메이션 수정
+
+- 오늘은 간단하게 wastebasket 애니메이션을 수정했다. 원래는 before, after로 사용했는데 클래스 지정이 까다로워서 그냥 엘리먼트를 만들었다.
+f-side와 u-side의 색대비도 주어서 훨씬 입체감있게 만들었다. border도 위아래로 주니까 더 입체적이다. 내일은 u-side에도 텍스트 추가하고
+모달을 마무리해야겠다.

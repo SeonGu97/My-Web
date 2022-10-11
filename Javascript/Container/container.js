@@ -21,7 +21,6 @@ export default class Container {
         const line3 = new Line(creator, container.name);
         const title = new Title(creator, container.name, `<i class="bi bi-dot"></i> Project`);
         const project = new Project(creator, container.name);
-        const line4 = new Line(creator, container.name);
         const wastebasket = new Wastebasket(creator, container.name);
         const footer = new Footer(creator, container.name);
     }

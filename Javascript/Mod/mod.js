@@ -40,6 +40,8 @@ export default class Mod {
         const modal = document.querySelector('.modal');
         const modal_exit_btn = document.querySelector('.modal-exit-btn > i');
         const modal_project = document.querySelectorAll('.modal-project');
+        const f_side = document.querySelector('.f-side');
+        const u_side = document.querySelector('.u-side');
 
         const icons = ['<i class="fa-solid fa-moon"></i> 다크모드로 보기', '<i class="bi bi-sun-fill"></i> 라이트모드로 보기'];
 
@@ -48,7 +50,7 @@ export default class Mod {
 
             target.classList.toggle('mod-change');
 
-            this.active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title, up, modal, modal_exit_btn, modal_project);
+            this.active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title, up, modal, modal_exit_btn, modal_project, f_side, u_side);
 
             this.activeChange(nav, value);
         });
@@ -77,10 +79,10 @@ export default class Mod {
             }
         });
 
-        this.maintain(mod.name, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title, up, modal, modal_exit_btn, modal_project);
+        this.maintain(mod.name, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title, up, modal, modal_exit_btn, modal_project, f_side, u_side);
     }
 
-    maintain(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title, up, modal, modal_exit_btn, modal_project) {
+    maintain(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title, up, modal, modal_exit_btn, modal_project, f_side, u_side) {
         if(value[0]) {
             mod.classList.add('mod-change');
             mod.classList.replace('mod-bg-w-w', 'mod-bg-d-d');
@@ -89,10 +91,10 @@ export default class Mod {
 
         }
 
-        this.active(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title, up, modal, modal_exit_btn, modal_project);
+        this.active(mod, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title, up, modal, modal_exit_btn, modal_project, f_side, u_side);
     }
 
-    active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title, up, modal, modal_exit_btn, modal_project) {
+    active(target, main, header, line, icons, name, value, aside, exit, profile, picture, skill_icon, infor, body, back, box, front, box_btn, item, cover, footer, labels, user_name, message, submit, item_title, up, modal, modal_exit_btn, modal_project, f_side, u_side) {
         let boolean = target.classList.contains('mod-change') ? true : false;
 
         value.push(boolean);
@@ -166,7 +168,12 @@ export default class Mod {
             modal_exit_btn.classList.add('modal-exit-btn-d');
             modal_project.forEach(element => {
                 element.classList.replace('bd-w', 'bd-d');
-            })
+            });
+
+            f_side.classList.replace('f-side-w', 'f-side-d');
+            u_side.classList.replace('u-side-w', 'u-side-d');
+            f_side.classList.replace('bd-w', 'bd-d');
+            u_side.classList.replace('bd-w', 'bd-d');
 
             target.innerHTML = target.innerHTML.replace(icons[0], icons[1]);
         }else {
@@ -237,7 +244,12 @@ export default class Mod {
             modal_exit_btn.classList.remove('modal-exit-btn-d');
             modal_project.forEach(element => {
                 element.classList.replace('bd-d', 'bd-w');
-            })
+            });
+
+            f_side.classList.replace('f-side-d', 'f-side-w');
+            u_side.classList.replace('u-side-d', 'u-side-w');
+            f_side.classList.replace('bd-d', 'bd-w');
+            u_side.classList.replace('bd-d', 'bd-w');
 
             target.innerHTML = target.innerHTML.replace(icons[1], icons[0]);
         }
