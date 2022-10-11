@@ -40,12 +40,17 @@ export default class Index {
             value.push(0);
         }else {
             value = JSON.parse(localStorage.getItem(name));
+            
+            value.splice(value.indexOf(value[0]), 1);
+            value.push(0);
         }
+
+        window.scrollTo('0px', '0px');
 
         nav.forEach((element, index, array, thisArg) => {
             const mod = document.querySelector('.mod');
-            const nav_1 = array[0].childNodes[value[0]];
-            const nav_2 = array[1].childNodes[value[0]];
+            const nav_1 = array[0].firstChild;
+            const nav_2 = array[1].firstChild;
 
             element.childNodes.forEach((element, index) => {
                 element.index = index;
@@ -106,6 +111,8 @@ export default class Index {
                     }
                 }
             }, false);
+
+            this.setStorage(name, value)
         });
     }
 

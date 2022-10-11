@@ -2,7 +2,7 @@
 
 export default class Skill {
     constructor(creator, container) {
-        const skill = new creator('skill', 'section', 'class', 'skill location-3', '', 1, container, false, '', '');
+        const skill = new creator('skill', 'section', 'class', 'skill location-3 skill-bg-w', '', 1, container, false, '', '');
         
         const num = 4;
         const icons = ['<i class="fa-brands fa-html5"></i>', '<i class="fa-brands fa-css3-alt"></i>', '<i class="fa-brands fa-square-js"></i>', '<i class="fa-solid fa-image"></i>'];

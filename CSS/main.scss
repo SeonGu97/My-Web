@@ -251,6 +251,14 @@ html {
                         }
                     }
 
+                    .motto-bg-w {
+                        background: rgb(245, 245, 245);
+                    }
+
+                    .motto-bg-d {
+                        background: rgba(30, 30, 30);
+                    }
+
                     .box {
                         @include full-size();
                         position: relative;
@@ -331,7 +339,7 @@ html {
                         }
 
                         .back-w {
-                            background: #f5f5f5;
+                            background: #eceff1;
                         }
 
                         .back-d {
@@ -467,6 +475,14 @@ html {
                             font-size: $primary-size;
                             font-weight: bold;
                         }
+                    }
+
+                    .skill-bg-w {
+                        background: rgb(245, 245, 245);
+                    }
+
+                    .skill-bg-d {
+                        background: rgba(30, 30, 30);
                     }
 
                     .skill-d {
@@ -706,12 +722,16 @@ html {
                         }
 
                         .u-side {
+                            display: flex;
                             width: 100%;
                             height: $primary-size * 9;
+                            justify-content: center;
+                            align-items: center;
                             position: absolute;
                             transform: rotateX(90deg) translateZ(72px);
                             border-width: 1px 0px 1px 0px;
                             border-style: solid;
+                            font-size: $primary-size * 1.5;
                         }
 
                         &:hover {
@@ -743,10 +763,12 @@ html {
 
                     .u-side-w {
                         background: rgba(240, 240, 240);
+                        color: $black-1;
                     }
 
                     .u-side-d {
                         background: rgba(25, 25, 25);
+                        color: #b0bec5;
                     }
                 }
             }
