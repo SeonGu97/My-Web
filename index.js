@@ -9,6 +9,7 @@ import Resize from "./Javascript/resize.js";
 import Up from "./Javascript/Up/up.js";
 import Modal from "./Javascript/Modal/modal.js";
 import Modal_bg from "./Javascript/Modal/modal_bg.js";
+import Scroll from "./Javascript/scroll.js";
 
 export default class Index {
     constructor(creator) {
@@ -31,6 +32,8 @@ export default class Index {
         const mod = new Mod(creator, index.name);
 
         const nav = document.querySelectorAll('nav');
+
+        const scroll = Scroll;
 
         const name = 'index';
         let value;
