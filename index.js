@@ -73,46 +73,50 @@ export default class Index {
             }
 
             element.addEventListener('click', e => {
-                let target = e.target;
-                
-                if(target.classList.contains('menu')) {
-                    value.push(target.index);
-                    value.splice(value.indexOf(value[0]), 1);
+                setTimeout(() => {
+                    let target = e.target;
                     
-                    this.setStorage(name, value);
-    
-                    if(mod.classList.contains('mod-change')) {
-                        array[0].childNodes.forEach(element => {
-                            element.classList.remove('active-d');
-                            element.classList.remove('active-d-bd');
-                        })
+                    if(target.classList.contains('menu')) {
+                        value.push(target.index);
+                        value.splice(value.indexOf(value[0]), 1);
+                        
+                        this.setStorage(name, value);
         
-                        array[1].childNodes.forEach(element => {
-                            element.classList.remove('active-bg-d');
-                        })
-    
-                        array[0].childNodes[target.index].classList.add('active-d');
-                        array[0].childNodes[target.index].classList.add('active-d-bd');
-    
-                        array[1].childNodes[target.index].classList.add('active-bg-d');
-                    }else {
-                        array[0].childNodes.forEach(element => {
-                            element.classList.remove('active-w');
-                            element.classList.remove('active-w-bd');
-                        })
+                        if(mod.classList.contains('mod-change')) {
+                            array[0].childNodes.forEach(element => {
+                                element.classList.remove('active-d');
+                                element.classList.remove('active-d-bd');
+                            });
+            
+                            array[1].childNodes.forEach(element => {
+                                element.classList.remove('active-d');
+                                element.classList.remove('active-bg-d');
+                            });
         
-                        array[1].childNodes.forEach(element => {
-                            element.classList.remove('active-w');
-                            element.classList.remove('active-bg');
-                        })
-    
-                        array[0].childNodes[target.index].classList.add('active-w');
-                        array[0].childNodes[target.index].classList.add('active-w-bd');
-    
-                        array[1].childNodes[target.index].classList.add('active-w');
-                        array[1].childNodes[target.index].classList.add('active-bg');
+                            array[0].childNodes[target.index].classList.add('active-d');
+                            array[0].childNodes[target.index].classList.add('active-d-bd');
+                            
+                            array[1].childNodes[target.index].classList.add('active-d');
+                            array[1].childNodes[target.index].classList.add('active-bg-d');
+                        }else {
+                            array[0].childNodes.forEach(element => {
+                                element.classList.remove('active-w');
+                                element.classList.remove('active-w-bd');
+                            });
+            
+                            array[1].childNodes.forEach(element => {
+                                element.classList.remove('active-w');
+                                element.classList.remove('active-bg');
+                            });
+        
+                            array[0].childNodes[target.index].classList.add('active-w');
+                            array[0].childNodes[target.index].classList.add('active-w-bd');
+        
+                            array[1].childNodes[target.index].classList.add('active-w');
+                            array[1].childNodes[target.index].classList.add('active-bg');
+                        }
                     }
-                }
+                }, 100);
             }, false);
 
             this.setStorage(name, value)

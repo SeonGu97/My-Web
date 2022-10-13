@@ -339,7 +339,7 @@ html {
                         }
 
                         .back-w {
-                            background: #eceff1;
+                            background: $white-1;
                         }
 
                         .back-d {
@@ -593,7 +593,8 @@ html {
 
                     footer {
                         width: 100%;
-                        padding: $primary-size * 2 0;
+                        padding-top: $primary-size * 2;
+                        padding-bottom: $primary-size * 3;
                         box-sizing: border-box;
 
                         .title {
@@ -713,18 +714,20 @@ html {
                         .f-side {
                             display: flex;
                             width: 100%;
-                            height: $primary-size * 9;
+                            height: 100%;
                             justify-content: center;
                             align-items: center;
                             transform: translateZ(50px);
                             border-width: 1px 0px 1px 0px;
                             border-style: solid;
+                            font-size: $primary-size * 3;
+                            padding: $primary-size * 2.5 0;
                         }
 
                         .u-side {
                             display: flex;
                             width: 100%;
-                            height: $primary-size * 9;
+                            height: 100%;
                             justify-content: center;
                             align-items: center;
                             position: absolute;
@@ -732,6 +735,7 @@ html {
                             border-width: 1px 0px 1px 0px;
                             border-style: solid;
                             font-size: $primary-size * 1.5;
+                            padding: $primary-size * 2.5 0;
                         }
 
                         &:hover {
@@ -944,7 +948,7 @@ html {
         }
 
         .active-bg {
-            background: #e8eaf6;
+            background: rgba(0, 100, 250, 0.1);
             border-radius: 0 $primary-size * 1.5 $primary-size * 1.5 0;
         }
 
@@ -1101,7 +1105,13 @@ html {
         }
     }
 
+    .title {
+        padding-top: $primary-size * 2.5 !important;
+        padding-left: $primary-size * 2.5 !important; 
+    }
+
     .container {
+        scroll-margin: 3.1rem !important;
 
         .motto {
             font-size: $primary-size * 1.25 !important;
@@ -1123,6 +1133,63 @@ html {
                 font-size: $primary-size / 1.25 !important;
             }
         }
+
+        .box {
+            scroll-margin: 3rem !important;
+        }
+
+        .skill {
+            scroll-margin: 3rem !important;
+        }
+
+        .project {
+            scroll-margin: 6.5rem !important;
+
+            .item {
+                width: $primary-size * 17.5 !important;
+                height: $primary-size * 17.5 !important;
+
+                .item-img {
+                    width: $primary-size * 17.5 !important;
+                    height: $primary-size * 17.5 !important;
+                }
+
+                .cover {
+
+                    pre {
+                        font-size: $primary-size / 1.55 !important;
+                    }
+                }
+            }
+        }
+
+        footer {
+            padding-top: $primary-size !important;
+            padding-bottom: $primary-size * 2.5 !important;
+            
+            .title {
+                padding-bottom: $primary-size * 3 !important;
+            }
+        }
+    }
+
+    .mod {
+        right: $primary-size / 1.5 !important;
+        bottom: $primary-size !important;
+        padding: $primary-size !important;
+        font-size: $primary-size - .3 !important;
+
+        i {
+            font-size: $primary-size - .3 !important;
+        }
+    }
+
+    .up {
+        width: $primary-size * 2.5 !important;
+        height: $primary-size * 2.5 !important;
+        font-size: $primary-size !important;
+        bottom: $primary-size * 4.5 !important;
+        right: $primary-size / 1.5 !important;
     }
 }
 
@@ -1142,6 +1209,11 @@ html {
         nav {
             display: none !important;
         }
+    }
+
+    .title {
+        padding-top: $primary-size * 2 !important;
+        padding-left: $primary-size / 2 !important;
     }
 
     .container {
@@ -1189,8 +1261,57 @@ html {
             }
         }
 
+        .project {
+            scroll-margin: 6rem !important;
+        }
+
         footer {
-            padding: $primary-size !important;
+            padding: 0px 0px !important;
+            padding-bottom: $primary-size * 2.5 !important;
+
+            .title {
+                padding: $primary-size * 2 !important;
+                padding-left: $primary-size / 2 !important;
+            }
+        }
+    }
+
+    .mod {
+        right: $primary-size / 2 !important;
+        bottom: $primary-size / 2 !important;
+        padding: $primary-size / 1.25 !important;
+        font-size: $primary-size - .5 !important;
+
+        i {
+            font-size: $primary-size - .5 !important;
+        }
+    }
+
+    .up {
+        width: $primary-size * 2 !important;
+        height: $primary-size * 2 !important;
+        font-size: .9rem !important;
+        bottom: $primary-size * 3.5 !important;
+        right: $primary-size / 2 !important;
+    }
+
+    .wastebasket {
+        .u-side {
+            font-size: $primary-size * 1.25 !important;
+        }
+    }
+
+    .modal {
+        width: 300px !important;
+        height: 400px !important;
+
+        .modal-project {
+            height: $primary-size * 3 !important;
+            margin-bottom: $primary-size / 1.5 !important;
+
+            .modal-mark {
+                font-size: $primary-size * 2 !important;
+            }
         }
     }
 }

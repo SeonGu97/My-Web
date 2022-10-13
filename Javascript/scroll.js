@@ -65,10 +65,10 @@ const scroll = window.addEventListener('scroll', e => {
 
             array[1].childNodes.forEach((element, index, array) => {
                 element.classList.remove('active-d');
-                element.classList.remove('active-bg');
+                element.classList.remove('active-bg-d');
 
                 array[num].classList.add('active-d');
-                array[num].classList.add('active-bg');
+                array[num].classList.add('active-bg-d');
             })
         }else {
             array[0].childNodes.forEach((element, index, array) => {

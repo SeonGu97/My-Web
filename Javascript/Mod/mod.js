@@ -294,6 +294,7 @@ export default class Mod {
 
                 array[1].childNodes[_value].classList.replace('active-bg-d','active-bg');
                 array[1].childNodes[_value].classList.add('active-w');
+                array[1].childNodes[_value].classList.remove('active-d');
             }
         });
     }

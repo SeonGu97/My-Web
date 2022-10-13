@@ -345,7 +345,7 @@ html body #index main .container .box .back {
   border-style: solid;
 }
 html body #index main .container .box .back-w {
-  background: #eceff1;
+  background: #fafafa;
 }
 html body #index main .container .box .back-d {
   background: #212121;
@@ -565,7 +565,8 @@ html body #index main .container .project-d {
 }
 html body #index main .container footer {
   width: 100%;
-  padding: 2rem 0;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
   box-sizing: border-box;
 }
 html body #index main .container footer .title {
@@ -670,17 +671,19 @@ html body #index main .container .wastebasket {
 html body #index main .container .wastebasket .f-side {
   display: flex;
   width: 100%;
-  height: 9rem;
+  height: 100%;
   justify-content: center;
   align-items: center;
   transform: translateZ(50px);
   border-width: 1px 0px 1px 0px;
   border-style: solid;
+  font-size: 3rem;
+  padding: 2.5rem 0;
 }
 html body #index main .container .wastebasket .u-side {
   display: flex;
   width: 100%;
-  height: 9rem;
+  height: 100%;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -688,6 +691,7 @@ html body #index main .container .wastebasket .u-side {
   border-width: 1px 0px 1px 0px;
   border-style: solid;
   font-size: 1.5rem;
+  padding: 2.5rem 0;
 }
 html body #index main .container .wastebasket:hover {
   transform: rotateX(-90deg);
@@ -866,7 +870,7 @@ html body .active-w-bd {
   border-bottom: 3px solid #1a73e8;
 }
 html body .active-bg {
-  background: #e8eaf6;
+  background: rgba(0, 100, 250, 0.1);
   border-radius: 0 1.5rem 1.5rem 0;
 }
 html body .active-d {
@@ -996,6 +1000,13 @@ html .modal-bg {
   header nav {
     display: none !important;
   }
+  .title {
+    padding-top: 2.5rem !important;
+    padding-left: 2.5rem !important;
+  }
+  .container {
+    scroll-margin: 3.1rem !important;
+  }
   .container .motto {
     font-size: 1.25rem !important;
   }
@@ -1009,6 +1020,49 @@ html .modal-bg {
   }
   .container .motto .saying {
     font-size: 0.8rem !important;
+  }
+  .container .box {
+    scroll-margin: 3rem !important;
+  }
+  .container .skill {
+    scroll-margin: 3rem !important;
+  }
+  .container .project {
+    scroll-margin: 6.5rem !important;
+  }
+  .container .project .item {
+    width: 17.5rem !important;
+    height: 17.5rem !important;
+  }
+  .container .project .item .item-img {
+    width: 17.5rem !important;
+    height: 17.5rem !important;
+  }
+  .container .project .item .cover pre {
+    font-size: 0.6451612903rem !important;
+  }
+  .container footer {
+    padding-top: 1rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  .container footer .title {
+    padding-bottom: 3rem !important;
+  }
+  .mod {
+    right: 0.6666666667rem !important;
+    bottom: 1rem !important;
+    padding: 1rem !important;
+    font-size: 0.7rem !important;
+  }
+  .mod i {
+    font-size: 0.7rem !important;
+  }
+  .up {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    font-size: 1rem !important;
+    bottom: 4.5rem !important;
+    right: 0.6666666667rem !important;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1024,6 +1078,10 @@ html .modal-bg {
   }
   header nav {
     display: none !important;
+  }
+  .title {
+    padding-top: 2rem !important;
+    padding-left: 0.5rem !important;
   }
   .container .motto {
     font-size: 1rem !important;
@@ -1052,7 +1110,45 @@ html .modal-bg {
     top: -2px !important;
     right: 12px !important;
   }
+  .container .project {
+    scroll-margin: 6rem !important;
+  }
   .container footer {
-    padding: 1rem !important;
+    padding: 0px 0px !important;
+    padding-bottom: 2.5rem !important;
+  }
+  .container footer .title {
+    padding: 2rem !important;
+    padding-left: 0.5rem !important;
+  }
+  .mod {
+    right: 0.5rem !important;
+    bottom: 0.5rem !important;
+    padding: 0.8rem !important;
+    font-size: 0.5rem !important;
+  }
+  .mod i {
+    font-size: 0.5rem !important;
+  }
+  .up {
+    width: 2rem !important;
+    height: 2rem !important;
+    font-size: 0.9rem !important;
+    bottom: 3.5rem !important;
+    right: 0.5rem !important;
+  }
+  .wastebasket .u-side {
+    font-size: 1.25rem !important;
+  }
+  .modal {
+    width: 300px !important;
+    height: 400px !important;
+  }
+  .modal .modal-project {
+    height: 3rem !important;
+    margin-bottom: 0.6666666667rem !important;
+  }
+  .modal .modal-project .modal-mark {
+    font-size: 2rem !important;
   }
 }/*# sourceMappingURL=main.css.map */
