@@ -4,22 +4,21 @@ import Description from "./description.js";
 
 export default class Cover {
     constructor(creator, project) {
-        project.childNodes.forEach(element => {
-            const cover = new creator('cover', 'div', 'class', 'cover slide-up cover-w', '', 1, element, false, '', '');
+        project.childNodes.forEach((element, index) => {
+            const cover = new creator('cover', 'a', 'class', 'cover cover-w', '', 1, element, false, '', '');
             
             const mod = document.querySelector('.mod');
 
-            element.addEventListener('mouseenter', e => {
-                const target = e.target;
+            const href = [
+                'https://seongu97.github.io/study/%ED%88%AC%EB%91%90%EB%A6%AC%EC%8A%A4%ED%8A%B82/',
+                'https://seongu97.github.io/study/%EA%B2%8C%EC%8B%9C%ED%8C%90-1/',
+                'https://seongu97.github.io/study/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/',
+                'https://seongu97.github.io/study/%ED%92%80%ED%8E%98%EC%9D%B4%EC%A7%80/',
+                'https://seongu97.github.io/canvas/',
+                'https://seongu97.github.io/study/%EB%A1%9C%EA%B7%B8%EC%9D%B8/'
+            ];
 
-                target.children[0].classList.replace('slide-up', 'slide-down');
-            }, false);
-
-            element.addEventListener('mouseleave', e => {
-                const target = e.target;
-
-                target.children[0].classList.replace('slide-down', 'slide-up');
-            }, false);
+            element.firstChild.setAttribute('href', href[index]);
 
             const description = new Description(creator, cover.name);
 

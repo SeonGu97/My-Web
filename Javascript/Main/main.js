@@ -5,7 +5,16 @@ import Header from "../Header/header.js";
 
 export default class Main {
     constructor(creator, index) {
-        const main = new creator('main', 'main', 'class', 'bd-w light-w-bg-main', '', 1, index, false, '', '');    
+        const main = new creator('main', 'main', 'class', 'bd-w light-w-bg-main', '', 1, index, true, 'mouseover', e => {
+            const target = e.target;
+
+            if(!target.classList.contains('cover')) {
+                const cover = document.querySelectorAll('.cover');
+                cover.forEach(element => {
+                    element.classList.remove('slide-down');
+                });
+            }
+        }, false);    
     
         const header = new Header(creator, main.name);
         const container = new Container(creator, main.name);

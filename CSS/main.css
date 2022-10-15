@@ -380,7 +380,7 @@ html body #index main .container .box .box-btn i {
   font-size: 1.5rem;
   pointer-events: none;
 }
-html body #index main .container .box .box-btn:hover ::after {
+html body #index main .container .box .box-btn::after {
   content: "\f249";
   font-family: bootstrap-icons;
   position: absolute;
@@ -495,6 +495,7 @@ html body #index main .container .project .item {
   position: relative;
   box-sizing: border-box;
   text-decoration: none;
+  position: relative;
 }
 html body #index main .container .project .item:hover {
   transform: scale(0.95);
@@ -503,23 +504,24 @@ html body #index main .container .project .item:hover {
 html body #index main .container .project .item .cover {
   width: 100%;
   height: 100%;
-  pointer-events: none;
   border-radius: 0.5rem 0.5rem 0 0;
   transition: 0.25s ease;
   position: relative;
-  z-index: 15;
+  z-index: 20;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
 }
 html body #index main .container .project .item .cover .description {
   color: #fff;
   padding: 1rem;
   white-space: pre-wrap;
   font-size: 0.75rem;
+  pointer-events: none;
 }
 html body #index main .container .project .item .slide-down {
   transform: translateY(0);
-}
-html body #index main .container .project .item .slide-up {
-  transform: translateY(-110%);
 }
 html body #index main .container .project .item .cover-w {
   background: rgba(0, 0, 0, 0.85);
@@ -540,6 +542,7 @@ html body #index main .container .project .item .mark {
   bottom: 1rem;
   border-radius: 0.3333333333rem;
   z-index: 20;
+  pointer-events: none;
 }
 html body #index main .container .project .item .item-img {
   width: 320px;
@@ -547,6 +550,7 @@ html body #index main .container .project .item .item-img {
   position: absolute;
   top: 0px;
   left: 0px;
+  pointer-events: none;
 }
 html body #index main .container .project .item .item-title {
   position: absolute;
@@ -554,6 +558,7 @@ html body #index main .container .project .item .item-title {
   left: 1.25rem;
   bottom: 1.25rem;
   font-weight: bold;
+  pointer-events: none;
 }
 html body #index main .container .project-w {
   border: 1px solid #cfd8dc;
@@ -664,7 +669,7 @@ html body #index main .container .wastebasket {
   color: #b0bec5;
   position: relative;
   transform-style: preserve-3d;
-  transition: 0.45s ease;
+  transition: 0.5s ease;
   z-index: 30;
   box-sizing: border-box;
 }
@@ -691,9 +696,9 @@ html body #index main .container .wastebasket .u-side {
   border-width: 1px 0px 1px 0px;
   border-style: solid;
   font-size: 1.5rem;
-  padding: 2.5rem 0;
 }
 html body #index main .container .wastebasket:hover {
+  transition-delay: 0.2s;
   transform: rotateX(-90deg);
 }
 html body #index main .container .wastebasket i {
