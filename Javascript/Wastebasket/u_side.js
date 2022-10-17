@@ -8,6 +8,6 @@ export default class U_side {
             
             modal.classList.replace('modal-h', 'modal-s');
             modal_bg.classList.replace('modal-h', 'modal-s');
-        });    
+        });
     }
 }

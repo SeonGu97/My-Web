@@ -742,7 +742,7 @@ html {
                         }
 
                         &:hover {
-                            transition-delay: .2s;
+                            transition-delay: .125s;
                             transform: rotateX(-90deg);
                         }
 
@@ -1044,6 +1044,8 @@ html {
             cursor: pointer;
             border-width: 1px 0px;
             border-style: solid;
+            text-decoration: none;
+            color: inherit;
 
             &:hover {
                 background: rgba(150, 150, 150, .1);
