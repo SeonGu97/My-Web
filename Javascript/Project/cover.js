@@ -15,7 +15,8 @@ export default class Cover {
                 'https://seongu97.github.io/study/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%8D%94/',
                 'https://seongu97.github.io/study/%ED%92%80%ED%8E%98%EC%9D%B4%EC%A7%80/',
                 'https://seongu97.github.io/canvas/',
-                'https://seongu97.github.io/study/%EB%A1%9C%EA%B7%B8%EC%9D%B8/'
+                'https://seongu97.github.io/study/%EB%A1%9C%EA%B7%B8%EC%9D%B8/',
+                'https://sungu1206.github.io/web/'
             ];
 
             element.firstChild.setAttribute('href', href[index]);
@@ -148,6 +149,20 @@ export default class Cover {
 부분이긴 하지만, 다른 프로젝트를 끝내고 바로 만들기에
 
 는 힘들어서 레이아웃을 만든것에 만족했다. 
+`,
+`• 제작기간 - 약 1주일 미만(기억 안남).
+
+• 느낀점 - 이 프로젝트는 코딩을 처음 시작하면서
+
+생활코딩을 접하고 처음만든 정적 웹페이지다. 아직도
+
+그때의 기분이 기억이난다. 뭔가 처음으로 스스로 해낸거 
+
+같은 뿌듯함과 신남, 코딩이라는 단어도 잘 몰랐던 내가 
+
+코딩이란 거대한 세상에 첫 발을 디딘 설레임이 가득했던 
+
+기억이난다.
 `
             ];
             for(let i = 0; i < _description.length; i++) {

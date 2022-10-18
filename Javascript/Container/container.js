@@ -8,6 +8,7 @@ import Project from "../Project/project.js";
 import Footer from "../Footer/footer.js";
 import Title from "./title.js";
 import Wastebasket from "../Wastebasket/wastebasket.js";
+import Copyright from "../Copyright/copyright.js";
 
 export default class Container {
     constructor(creator, main) {
@@ -23,5 +24,7 @@ export default class Container {
         const project = new Project(creator, container.name);
         const wastebasket = new Wastebasket(creator, container.name);
         const footer = new Footer(creator, container.name);
+        const line4 = new Line(creator, container.name);
+        const copyright = new Copyright(creator, container.name);
     }
 }

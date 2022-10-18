@@ -555,7 +555,6 @@ html {
                                 height: $primary-size * 2.75;
                                 justify-content: center;
                                 align-items: center;
-                                color: #ffd600;
                                 font-size: $primary-size * 2.5;
                                 position: absolute;
                                 right: $primary-size;
@@ -563,6 +562,14 @@ html {
                                 border-radius: $primary-size / 3;
                                 z-index: 20;
                                 pointer-events: none;
+
+                                .fa-square-js {
+                                    color: #ffd600;
+                                }
+
+                                .fa-html5 {
+                                    color: #dd2c00;
+                                }
                             }
 
                             .item-img {
@@ -777,6 +784,26 @@ html {
                     .u-side-d {
                         background: rgba(25, 25, 25);
                         color: #b0bec5;
+                    }
+
+                    .copyright {
+                        display: flex;
+                        width: 100%;
+                        height: $primary-size * 1.5;
+                        align-items: center;
+                        padding: 0 $primary-size;
+                        font-size: .75rem;
+                        background: rgba(245, 245, 245);
+                        box-sizing: border-box;
+                    }
+
+                    .copyright-w {
+                        background: rgba(245, 245, 245);
+                    }
+                    
+                    .copyright-d {
+                        background: rgba(30, 30, 30);
+                        color: $gray-3;
                     }
                 }
             }
