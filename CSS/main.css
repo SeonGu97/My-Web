@@ -380,6 +380,11 @@ html body #index main .container .box .box-btn i {
   font-size: 1.5rem;
   pointer-events: none;
 }
+html body #index main .container .box .box-btn:hover::before {
+  content: "click!";
+  position: absolute;
+  top: 100%;
+}
 html body #index main .container .box .box-btn::after {
   content: "\f249";
   font-family: bootstrap-icons;
@@ -941,7 +946,7 @@ html .modal {
   width: 350px;
   height: 500px;
   border-radius: 0.25rem;
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -960,13 +965,27 @@ html .modal .modal-exit-btn {
   background: transparent;
   font-size: 1.15rem;
   font-weight: bold;
-  padding: 5px;
   text-align: center;
 }
 html .modal .modal-exit-btn-d {
   color: #cfd8dc;
 }
-html .modal .modal-project {
+html .modal .modal-container {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 0.5rem;
+}
+html .modal .modal-container::-webkit-scrollbar {
+  width: 1rem;
+}
+html .modal .modal-container::-webkit-scrollbar-thumb {
+  background: #217af4;
+  background-clip: padding-box;
+  border: 4px solid transparent;
+  border-radius: 10px;
+}
+html .modal .modal-container .modal-project {
   display: flex;
   width: 100%;
   height: 4rem;
@@ -981,18 +1000,18 @@ html .modal .modal-project {
   text-decoration: none;
   color: inherit;
 }
-html .modal .modal-project:hover {
+html .modal .modal-container .modal-project:hover {
   background: rgba(150, 150, 150, 0.1);
   transform: scale(1.05, 1.05);
 }
-html .modal .modal-project .modal-mark {
+html .modal .modal-container .modal-project .modal-mark {
   display: flex;
   height: 100%;
   justify-content: center;
   align-items: center;
   font-size: 2.5rem;
 }
-html .modal .modal-project .modal-title {
+html .modal .modal-container .modal-project .modal-title {
   font-weight: bold;
 }
 html .modal-s {

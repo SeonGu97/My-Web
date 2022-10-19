@@ -16,7 +16,8 @@ export default class Cover {
                 'https://seongu97.github.io/study/%ED%92%80%ED%8E%98%EC%9D%B4%EC%A7%80/',
                 'https://seongu97.github.io/canvas/',
                 'https://seongu97.github.io/study/%EB%A1%9C%EA%B7%B8%EC%9D%B8/',
-                'https://sungu1206.github.io/web/'
+                'https://sungu1206.github.io/web/',
+                'https://sungu1206.github.io/practice/Code/Test/Test1/'
             ];
 
             element.firstChild.setAttribute('href', href[index]);
@@ -163,6 +164,28 @@ export default class Cover {
 코딩이란 거대한 세상에 첫 발을 디딘 설레임이 가득했던 
 
 기억이난다.
+`,
+`• 제작기간 - 약 2~3주(기억 안남).
+
+• 느낀점 - 내 기억으론 이게 두번째로 만든 프로젝트이다.
+
+생활코딩의 강의를 듣고 기본을 익히고, Javascript를 
+
+사용하지 않고, 아니 사실 이때는 HTML CSS를 막 익힌
+
+상태라 Javascript는 멀게 느껴졌었다. 그리고 당연
+
+두번째 프로젝트라 반응형이 뭔지도 몰랐었다.
+
+단지. 클론코딩이 실력 향상에 도움이 된다고 들어서
+
+무료 템플릿중 하나를 골라서 무작정 따라 만들었다.
+
+이 이후엔 클론코딩을 안했던 것 같다. 따라서 만드는건
+
+큰 도움이 안될 것 같아서 개성있게 만들고 싶다는 생각을
+
+했던 기억이난다.
 `
             ];
             for(let i = 0; i < _description.length; i++) {

@@ -11,6 +11,7 @@ export default class Mark {
         const marks = document.querySelectorAll('.mark');
         marks.forEach((element, index, array) => {
             array[6].innerHTML = icons[1];
+            array[7].innerHTML = icons[1];
         });
     }
 }

@@ -7,7 +7,7 @@ import Item_title from "./item-title.js";
 
 export default class Item {
     constructor(creator, project) {
-        const item = new creator('item', 'div', 'class', 'item project-w', '', 7, project, true, 'mouseenter', e => {
+        const item = new creator('item', 'div', 'class', 'item project-w', '', 8, project, true, 'mouseenter', e => {
             const target = e.target;
 
             target.firstChild.classList.add('slide-down');
@@ -30,6 +30,7 @@ export default class Item {
             'Img/item5.png',
             'Img/item6.png',
             'Img/item7.png',
+            'Img/item8.png',
         ];
 
         items.forEach(element => {
@@ -37,7 +38,7 @@ export default class Item {
         });
 
         const item_title = document.querySelectorAll('.item-title');
-        const title = ['투두리스트', '게시판', '이미지 슬라이더', '풀페이지', '공 튕기기', '로그인 레이아웃', '첫 HTML'];
+        const title = ['투두리스트', '게시판', '이미지 슬라이더', '풀페이지', '공 튕기기', '로그인 레이아웃', '첫 HTML', '첫 정적 클론코딩'];
 
         for(let i = 0; i < items.length; i++) {
             items_img[i].setAttribute('src', img[i]);
