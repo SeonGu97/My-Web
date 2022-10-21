@@ -340,6 +340,88 @@ html {
                             position: absolute;
                             top: 0;
                             border-style: solid;
+                            padding: $primary-size * 2;
+
+                            .tree {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-around;
+                                height: 50%;
+                                transform: scaleX(-1);
+                                position: relative;
+                                
+                                .stick {
+                                    display: flex;
+                                    align-items: center;
+                                    column-gap: $primary-size;
+                                    overflow: hidden;
+
+                                    .dot {
+                                        display: flex;
+                                        align-items: center;
+                                        font-size: $primary-size * 1.2;
+                                        font-weight: bold;
+                                        position: relative;
+                                        z-index: 5;
+                                        color: $black-1;
+                                    }
+
+                                    .day {
+                                        display: flex;
+                                        color: #9e9e9e;
+                                        align-items: center;
+                                        font-size: $primary-size / 1.3;
+                                    }
+
+                                    .stick-icon {
+                                        display: flex;
+                                        width: $primary-size * 1.6;
+                                        height: $primary-size * 1.6;
+                                        justify-content: center;
+                                        align-items: center;
+                                        font-size: $primary-size / 1.9;
+                                        border-radius: 50%;
+                                        color: $white-1;
+                                        margin-top: 2px;
+
+                                        i {
+                                            display: flex;
+                                            width: $primary-size;
+                                            height: $primary-size;
+                                            justify-content: center;
+                                            align-items: center;
+                                            margin-left: 1px;
+                                        }
+                                    }
+
+                                    .stick-w {
+                                        background: $sea;
+                                    }
+
+                                    .stick-d {
+                                        background: $sky;
+                                    }
+
+                                    .stick-text {
+                                        display: flex;
+                                        align-items: center;
+                                        opacity: .9;
+                                    }
+                                }
+
+                                .vertical {
+                                    width: 1px;
+                                    height: 74%;
+                                    position: absolute;
+                                    left: $primary-size / 1.7;
+                                    background: $gray-2;
+                                    z-index: 0;
+                                }
+
+                                .vertical-d {
+                                    background: $black-2;
+                                }
+                            }
                         }
 
                         .back-w {
@@ -372,7 +454,6 @@ html {
                             border: none;
                             cursor: pointer;
                             z-index: 15;
-                            opacity: .75;
 
                             i {
                                 transition: transform opacity .5s ease;
