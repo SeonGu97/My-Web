@@ -14,10 +14,12 @@ export default class Tree {
 
         sticks.forEach((element, index) => {        
             const dot = new creator('dot', 'span', 'class', 'dot ', '<i class="bi bi-dot"></i>', 1, element, false, '', '');
-        
-            const day = new creator('day', 'div', 'class', 'day ', array1[index], 1, element, false, '', '');
 
-            const icon = new creator('stick-icon', 'span', 'class', 'stick-icon stick-w', array2[index], 1, element, false, '', '');
+            const flower = new creator('flower', 'div', 'class', 'flower ', '', 1, element, false, '', '');
+        
+            const day = new creator('day', 'div', 'class', 'day ', array1[index], 1, flower.name, false, '', '');
+
+            const icon = new creator('stick-icon', 'span', 'class', 'stick-icon stick-w', array2[index], 1, flower.name, false, '', '');
 
             const text = new creator('stick-text', 'span', 'class', 'stick-text', array3[index], 1, element, false, '', '');
         });
