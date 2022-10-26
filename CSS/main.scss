@@ -152,7 +152,9 @@ html {
                             height: 100%;
                             justify-content: center;
                             position: relative;
+                            box-sizing: initial;
                             overflow: hidden;
+                            box-sizing: border-box;
 
                             .effect {       
                                 width: 17.5rem;
@@ -190,7 +192,46 @@ html {
 
                             .effect-d {
                                 background: $sky-a;
-                            }   
+                            }
+                        }
+                    }
+
+                    .sign {
+                        display: flex;
+                        width: 600px;
+                        justify-content: space-around;
+                        position: absolute;
+                        top: 115%;
+                        right: 0;
+
+                        .menu {
+                            display: flex;
+                            width: 100%;
+                            justify-content: center;
+
+                            span {
+                                display: block;
+                                padding: $primary-size / 3 $primary-size / 2;
+                                background: $black-2;
+                                border-radius: 5%;
+                                font-size: $primary-size / 2;
+                                color: #aeaeae;
+                                position: relative;
+                                opacity: 0;
+
+                                &::before {
+                                    content: '';
+                                    width: 0px;
+                                    height: 0px;
+                                    border-right: 6px solid $black-2;
+                                    border-top: 3px solid transparent;
+                                    border-bottom: 3px solid transparent;
+                                    position: absolute;
+                                    top: -25%;
+                                    left: 50%;
+                                    transform: rotate(90deg) translateY(50%);
+                                }
+                            }
                         }
                     }
                 }
@@ -348,8 +389,8 @@ html {
                             .tree {
                                 display: flex;
                                 flex-direction: column;
-                                justify-content: space-around;
-                                height: 50%;
+                                justify-content: space-between;
+                                height: 40%;
                                 transform: scaleX(-1);
                                 position: relative;
                                 
@@ -422,8 +463,9 @@ html {
 
                                 .vertical {
                                     width: 1px;
-                                    height: 74%;
+                                    height: 90%;
                                     position: absolute;
+                                    top: 5%;
                                     left: $primary-size / 1.7;
                                     background: $gray-2;
                                     z-index: 0;
@@ -452,6 +494,7 @@ html {
 
                         .back-d {
                             background: $black-3;
+                            color: #bdbdbd;
                         }
 
                         .open {
@@ -1045,6 +1088,7 @@ html {
                     width: 100%;
                     height: $primary-size * 3;
                     pointer-events: auto;
+                    position: relative;
                 }
             }
         }

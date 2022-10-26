@@ -12,8 +12,7 @@ export default class Menu {
         
         const menus = document.querySelectorAll('.menu');
         const array = ['Home', 'Intro', 'Skills', 'Project', 'About'];
-
-        for(let i = 0; i < menus.length; i++) {
+        for(let i = 0; i < menus.length - 10; i++) {
             menus[i].innerHTML = array[i];
         }
     }
