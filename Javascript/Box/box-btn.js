@@ -2,7 +2,7 @@
 
 export default class Box_btn {
     constructor(creator, box) {
-        const box_btn = new creator('box_btn', 'button', 'class', 'box-btn active-w', '<i class="bi bi-three-dots-vertical"></i>', 1, box, true, 'click', e => {
+        const box_btn = new creator('box_btn', 'button', 'class', 'box-btn active-w', '<i class="bi bi-arrow-bar-left"></i>', 1, box, true, 'click', e => {
             const front = document.querySelector('.front');
             const back = document.querySelector('.back');
             const box = document.querySelector('.box');
@@ -20,6 +20,10 @@ export default class Box_btn {
                 box.classList.replace('d-inner-shadow', 'inner-shadow');
                 back.classList.replace('d-shadow', 'shadow');
             }
+
+            const target = e.target;
+
+            target.classList.toggle('box-btn-active')
         });
     }   
 }

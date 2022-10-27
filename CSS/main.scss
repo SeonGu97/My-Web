@@ -519,28 +519,20 @@ html {
                             border: none;
                             cursor: pointer;
                             z-index: 15;
+                            transition: .2s;
+                            transition-delay: .1s;
+                            transition-duration: .6s;
 
                             i {
                                 transition: transform opacity .5s ease;
                                 font-size: $primary-size * 1.5;
                                 pointer-events: none;
                             }
+                        }
 
-                            &:hover::before {
-                                content: 'click!';
-                                position: absolute;
-                                top: 100%;
-                            }
-
-                            &::after {
-                                content: '\F249';
-                                font-family: bootstrap-icons;
-                                position: absolute;
-                                top: -15%;
-                                left: -25%;
-                                transform: scaleX(-1);
-                                font-size: 1rem;
-                            }
+                        .box-btn-active {
+                            transform: scale(-1);
+                            color: #bf360c;
                         }
 
                         .arrow-active-1 {
@@ -766,7 +758,7 @@ html {
 
                         .title {
                             padding-top: $primary-size * 1.5;
-                            padding-bottom: $primary-size * 3;
+                            padding-bottom: $primary-size * 2;
                         }
 
                         .email {
@@ -959,7 +951,7 @@ html {
                     
                     .copyright-d {
                         background: rgba(30, 30, 30);
-                        color: $gray-3;
+                        color: #acacac;
                     }
                 }
             }
@@ -1533,5 +1525,9 @@ html {
                 font-size: $primary-size * 2 !important;
             }
         }
+    }
+
+    .copyright {
+        font-size: $primary-size / 2 !important;
     }
 }

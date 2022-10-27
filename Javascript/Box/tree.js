@@ -8,7 +8,7 @@ export default class Tree {
     
         const sticks = document.querySelectorAll('.stick');
 
-        const array1 = ['2016.02', '2016.03 ~ 2018.02', '2018.08 ~ 2020.04', '2020.08~'];
+        const array1 = ['2016.02', '2016.03 ~ 2018.02', '2018.08 ~ 2020.04', '2020.08 ~'];
         const array2 = ['<i class="fa-solid fa-school"></i>', '<i class="fa-solid fa-graduation-cap"></i>', '<i class="fa-solid fa-person-military-rifle"></i>', '<i class="fa-solid fa-code"></i>']
         const array3 = ['고등학교 졸업 - 문과', '항공학교 졸업 - 학점은행제 점수 미달. 학위 미취득', '군입대 - 육군병장 만기전역', '프론트엔드 개발 공부중..'];
 

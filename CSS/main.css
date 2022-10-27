@@ -502,25 +502,18 @@ html body #index main .container .box .box-btn {
   border: none;
   cursor: pointer;
   z-index: 15;
+  transition: 0.2s;
+  transition-delay: 0.1s;
+  transition-duration: 0.6s;
 }
 html body #index main .container .box .box-btn i {
   transition: transform opacity 0.5s ease;
   font-size: 1.5rem;
   pointer-events: none;
 }
-html body #index main .container .box .box-btn:hover::before {
-  content: "click!";
-  position: absolute;
-  top: 100%;
-}
-html body #index main .container .box .box-btn::after {
-  content: "\f249";
-  font-family: bootstrap-icons;
-  position: absolute;
-  top: -15%;
-  left: -25%;
-  transform: scaleX(-1);
-  font-size: 1rem;
+html body #index main .container .box .box-btn-active {
+  transform: scale(-1);
+  color: #bf360c;
 }
 html body #index main .container .box .arrow-active-1 {
   transform: translateX(-50%);
@@ -714,7 +707,7 @@ html body #index main .container footer {
 }
 html body #index main .container footer .title {
   padding-top: 1.5rem;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 }
 html body #index main .container footer .email {
   display: flex;
@@ -879,7 +872,7 @@ html body #index main .container .copyright-w {
 }
 html body #index main .container .copyright-d {
   background: rgb(30, 30, 30);
-  color: #cfd8dc;
+  color: #acacac;
 }
 html body #index .line {
   margin: 0;
@@ -1339,5 +1332,8 @@ html .modal-bg {
   }
   .modal .modal-project .modal-mark {
     font-size: 2rem !important;
+  }
+  .copyright {
+    font-size: 0.5rem !important;
   }
 }/*# sourceMappingURL=main.css.map */
